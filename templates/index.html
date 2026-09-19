@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AEGIE Research Dataset Collection</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+        }
+
+        .container {
+            width: 650px;
+            margin: 60px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 18px;
+            font-weight: normal;
+        }
+
+        label {
+            display: block;
+            margin-top: 25px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 30px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .research {
+            margin-top: 30px;
+            padding: 15px;
+            background: #f5f5f5;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>AEGIE</h1>
+
+    <h2>
+        Adaptive Agentic AI-Based Voice Interview Evaluation
+    </h2>
+
+    <form action="/start" method="POST">
+
+        <label>Participant ID</label>
+
+        <input
+            type="text"
+            name="participant_id"
+            placeholder="Example: P001"
+            required
+        >
+
+        <label>Select IT Job Role</label>
+
+        <select name="job_role" required>
+
+            <option value="">-- Select Role --</option>
+
+            <option value="Software Developer">
+                Software Developer
+            </option>
+
+            <option value="Data Analyst">
+                Data Analyst
+            </option>
+
+            <option value="Data Scientist">
+                Data Scientist
+            </option>
+
+            <option value="Machine Learning Engineer">
+                Machine Learning Engineer
+            </option>
+
+            <option value="Cloud DevOps Engineer">
+                Cloud/DevOps Engineer
+            </option>
+
+            <option value="Cybersecurity Analyst">
+                Cybersecurity Analyst
+            </option>
+
+        </select>
+
+        <button type="submit">
+            Start Research Interview
+        </button>
+
+    </form>
+
+    <div class="research">
+        <b>Research Dataset:</b><br><br>
+        300 participants × 10 genuine voice responses
+        = 3,000 primary samples.
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+question_id,job_role,difficulty,question_text
+SD_E01,Software Developer,Easy,What is the difference between a list and a tuple in Python?
+SD_E02,Software Developer,Easy,What is object-oriented programming?
+SD_E03,Software Developer,Easy,What is the difference between a compiler and an interpreter?
+SD_E04,Software Developer,Easy,What is an API?
+SD_M01,Software Developer,Medium,Explain the difference between a process and a thread.
+SD_M02,Software Developer,Medium,How would you handle exceptions in a software application?
+SD_M03,Software Developer,Medium,Explain REST API and common HTTP methods.
+SD_M04,Software Developer,Medium,What is database indexing and why is it useful?
+SD_H01,Software Developer,Hard,How would you design a scalable application that handles many concurrent users?
+SD_H02,Software Developer,Hard,How would you identify and improve a performance bottleneck in an application?
+SD_H03,Software Developer,Hard,Explain how you would prevent race conditions in a concurrent application.
+SD_H04,Software Developer,Hard,How would you design a fault-tolerant service when one dependency may become unavailable?

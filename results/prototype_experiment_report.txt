@@ -1,0 +1,27 @@
+AEGIE NO-PARTICIPANT PROTOTYPE EXPERIMENT REPORT
+============================================================
+
+Development feature rows: 33
+Unique sample IDs: 33
+Unique participant IDs: 4
+Unique job roles: 1
+Unique question IDs: 11
+Duplicate sample rows: 0
+
+OVERALL DESCRIPTIVE EVIDENCE
+------------------------------------------------------------
+whole_mean_similarity: n=33, mean=0.4582, std=0.1273, min=0.2155, max=0.732
+sentence_mean_best_similarity: n=33, mean=0.5037, std=0.1371, min=0.2155, max=0.7622
+duration_sec: n=33, mean=16.9639, std=6.2675, min=4.86, max=28.86
+word_count: n=33, mean=30.8182, std=10.3485, min=9.0, max=52.0
+wpm: n=33, mean=111.5206, std=14.0934, min=87.5, max=143.84
+filler_count: n=33, mean=0.0606, std=0.2423, min=0.0, max=1.0
+pause_count: n=33, mean=0.9697, std=1.1855, min=0.0, max=5.0
+filler_rate_per_100_words: n=33, mean=0.2635, std=1.0535, min=0.0, max=4.3478
+pause_rate_per_minute: n=33, mean=3.1226, std=3.2744, min=0.0, max=10.9369
+
+RESEARCH INTERPRETATION
+------------------------------------------------------------
+These results are descriptive measurements from the AEGIE DEVELOPMENT proof-of-concept feature store.
+MiniLM similarity values are semantic evidence and must not be interpreted as validated 1-5 interview scores.
+No population-level accuracy, human-agreement, or participant-study conclusion is made from these data.

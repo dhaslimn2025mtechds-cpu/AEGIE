@@ -1,0 +1,13 @@
+question_id,job_role,difficulty,question_text
+CS_E01,Cybersecurity Analyst,Easy,What is cybersecurity?
+CS_E02,Cybersecurity Analyst,Easy,What is the difference between authentication and authorization?
+CS_E03,Cybersecurity Analyst,Easy,What is phishing?
+CS_E04,Cybersecurity Analyst,Easy,What is a firewall and why is it used?
+CS_M01,Cybersecurity Analyst,Medium,What is the difference between symmetric and asymmetric encryption?
+CS_M02,Cybersecurity Analyst,Medium,How would you identify a phishing email?
+CS_M03,Cybersecurity Analyst,Medium,What is multi-factor authentication and why does it improve security?
+CS_M04,Cybersecurity Analyst,Medium,What is the principle of least privilege?
+CS_H01,Cybersecurity Analyst,Hard,How would you investigate suspicious login activity in an organization?
+CS_H02,Cybersecurity Analyst,Hard,How would you respond if you discovered that an employee account had been compromised?
+CS_H03,Cybersecurity Analyst,Hard,How would you detect and respond to unusual network traffic that may indicate an attack?
+CS_H04,Cybersecurity Analyst,Hard,How would you design a security monitoring strategy for a cloud-based application?

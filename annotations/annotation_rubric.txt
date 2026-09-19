@@ -1,0 +1,335 @@
+AEGIE HUMAN ANNOTATION RUBRIC
+=============================
+
+Rubric Version:
+V2
+
+Purpose:
+This rubric is used by human annotators to evaluate genuine
+participant responses in the AEGIE research study.
+
+Each response is scored independently from 1 to 5 on five
+dimensions:
+
+1. Relevance
+2. Technical Correctness
+3. Clarity
+4. Communication Quality
+5. Overall Answer Quality
+
+
+============================================================
+GENERAL ANNOTATION RULES
+============================================================
+
+1. Use whole-number scores only:
+
+   1, 2, 3, 4, or 5
+
+2. Score each dimension independently.
+
+3. Do not automatically calculate one score from another score.
+
+4. Overall Answer Quality is a separate holistic judgment.
+   It should not simply be an arithmetic average of the other
+   four scores.
+
+5. Annotators must evaluate the participant's actual response,
+   not the AEGIE prediction.
+
+6. Annotators must not see AEGIE predicted scores while
+   creating human reference labels.
+
+7. If the automated transcript appears incorrect, the
+   annotator should use the original audio recording where
+   available before assigning a score.
+
+8. A participant must not be penalized for an automatic
+   speech-recognition transcription error.
+
+9. Accent or regional pronunciation must not reduce a score
+   unless it genuinely prevents the answer from being
+   understood.
+
+10. Do not reward an answer simply because it uses the same
+    wording as a reference answer.
+
+11. Technical correctness must be judged based on the meaning
+    of the participant's answer.
+
+12. Different technically valid explanations may receive high
+    scores.
+
+13. Missing, corrupted, silent, or otherwise unusable
+    responses must not receive invented scores.
+
+14. If a response cannot be reliably evaluated, mark it
+    according to the annotation protocol instead of assigning
+    an artificial score.
+
+15. Annotators should make their first judgment independently
+    before any disagreement discussion or adjudication.
+
+
+============================================================
+1. RELEVANCE
+============================================================
+
+Definition:
+
+Relevance measures how directly the response addresses the
+question that was asked.
+
+Score 1:
+Completely unrelated to the question.
+
+The response does not meaningfully address the requested topic.
+
+Score 2:
+Mostly unrelated.
+
+The response contains very limited information related to the
+question but does not meaningfully answer it.
+
+Score 3:
+Partially relevant.
+
+The response addresses part of the question but misses one or
+more important aspects.
+
+Score 4:
+Relevant.
+
+The response directly addresses the question and covers most
+important points, with only minor omissions.
+
+Score 5:
+Highly relevant and complete.
+
+The response directly and completely addresses the question
+without unnecessary diversion.
+
+
+============================================================
+2. TECHNICAL CORRECTNESS
+============================================================
+
+Definition:
+
+Technical Correctness measures whether the technical content
+of the response is factually and conceptually correct for the
+question and job-role context.
+
+Score 1:
+Fundamentally incorrect.
+
+The main technical explanation is wrong or demonstrates a
+serious misunderstanding of the concept.
+
+Score 2:
+Major technical errors.
+
+Some relevant ideas may be present, but important technical
+claims are incorrect.
+
+Score 3:
+Partially correct.
+
+The core idea is partly correct but contains missing details,
+minor misconceptions, or incomplete reasoning.
+
+Score 4:
+Mostly correct.
+
+The main technical explanation is correct with only minor
+omissions, simplifications, or small inaccuracies.
+
+Score 5:
+Technically correct and well explained.
+
+The response demonstrates accurate understanding and explains
+the important technical concept clearly and appropriately.
+
+Important:
+
+A response does not need to use the exact wording of a
+reference answer to receive a high score.
+
+Any technically valid explanation should be evaluated fairly.
+
+
+============================================================
+3. CLARITY
+============================================================
+
+Definition:
+
+Clarity measures how understandable, logically organized, and
+easy to follow the content of the answer is.
+
+This dimension mainly evaluates the organization and
+understandability of the ideas.
+
+Score 1:
+Very difficult to understand.
+
+The response is highly confusing, disorganized, or impossible
+to follow.
+
+Score 2:
+Frequently unclear.
+
+The main idea is difficult to follow because of poor structure
+or unclear explanation.
+
+Score 3:
+Understandable but lacks structure.
+
+The main meaning can be understood, but the response may be
+somewhat disorganized or incomplete.
+
+Score 4:
+Clear and reasonably structured.
+
+The response is easy to understand and follows a mostly logical
+order.
+
+Score 5:
+Very clear, concise, and logically structured.
+
+The ideas are communicated in a well-organized way with very
+little unnecessary or confusing content.
+
+
+============================================================
+4. COMMUNICATION QUALITY
+============================================================
+
+Definition:
+
+Communication Quality measures how effectively the participant
+communicates the answer verbally.
+
+This may include understandable delivery, sentence formation,
+appropriate pace, and the ability to communicate the intended
+meaning.
+
+Do not penalize a participant merely for accent or regional
+pronunciation.
+
+Score 1:
+Communication seriously prevents understanding.
+
+The listener cannot reliably understand the intended response.
+
+Score 2:
+Frequent communication difficulties.
+
+Delivery problems repeatedly interfere with understanding.
+
+Score 3:
+Adequate communication.
+
+The response can be understood, although some delivery or
+language difficulties are present.
+
+Score 4:
+Good communication.
+
+The response is communicated effectively with only minor
+delivery difficulties.
+
+Score 5:
+Highly effective and professional communication.
+
+The participant communicates the answer confidently and
+effectively, and the intended meaning is consistently easy to
+understand.
+
+
+============================================================
+5. OVERALL ANSWER QUALITY
+============================================================
+
+Definition:
+
+Overall Answer Quality is the annotator's holistic evaluation
+of the complete response.
+
+It considers the response as a whole, including its relevance,
+technical value, clarity, and communication effectiveness.
+
+The overall score must be judged independently and must not be
+automatically calculated as the average of the other scores.
+
+Score 1:
+Very poor response.
+
+The answer fails to meaningfully address the question or has
+major problems that prevent it from being useful.
+
+Score 2:
+Weak response.
+
+The answer demonstrates limited understanding or substantial
+problems in content or communication.
+
+Score 3:
+Acceptable response.
+
+The answer demonstrates basic understanding and communicates a
+reasonable response but has noticeable limitations.
+
+Score 4:
+Good response.
+
+The answer is relevant, mostly correct, clear, and effective,
+with only minor limitations.
+
+Score 5:
+Excellent response.
+
+The answer is highly relevant, technically strong, clear,
+well organized, and effectively communicated.
+
+
+============================================================
+UNUSABLE RESPONSE RULE
+============================================================
+
+Do not assign artificial 1-5 scores when a response cannot be
+evaluated reliably because of conditions such as:
+
+- missing audio
+- empty recording
+- corrupted recording
+- no understandable speech
+- recording failure
+- participant did not answer
+- serious technical failure that prevents evaluation
+
+Such cases should be documented using the annotation status or
+annotation notes according to the AEGIE annotation protocol.
+
+
+============================================================
+ANNOTATOR INDEPENDENCE
+============================================================
+
+Each pilot response should be independently evaluated by at
+least two human annotators.
+
+Example annotator IDs:
+
+RATER_01
+RATER_02
+
+The annotators should complete their initial scoring
+independently.
+
+Differences between annotators will later be analyzed using
+inter-rater agreement methods.
+
+Human annotation scores are research reference labels.
+
+They must never be generated or filled automatically by AEGIE.

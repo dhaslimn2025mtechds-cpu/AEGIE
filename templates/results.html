@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AEGIE Research Prototype Dashboard</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fb;
+            color: #172033;
+        }
+
+        .topbar {
+            background: #10233f;
+            color: white;
+            padding: 22px 28px;
+        }
+
+        .topbar h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .topbar p {
+            margin: 7px 0 0;
+            opacity: 0.86;
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: 24px auto 50px;
+            padding: 0 18px;
+        }
+
+        .banner {
+            background: white;
+            border-radius: 14px;
+            padding: 18px 20px;
+            margin-bottom: 18px;
+            box-shadow: 0 3px 16px rgba(16, 35, 63, 0.08);
+            border-left: 5px solid #2d6cdf;
+            line-height: 1.55;
+        }
+
+        .banner strong {
+            color: #10233f;
+        }
+
+        .integrity {
+            border-left-color: #1d8a52;
+            background: #f4fff8;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 14px;
+            padding: 18px;
+            box-shadow: 0 3px 16px rgba(16, 35, 63, 0.08);
+        }
+
+        .metric-title {
+            color: #657089;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-bottom: 7px;
+        }
+
+        .metric-value {
+            font-size: 26px;
+            font-weight: bold;
+            color: #10233f;
+        }
+
+        .metric-note {
+            margin-top: 6px;
+            font-size: 12px;
+            color: #7a8497;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #10233f;
+        }
+
+        .section {
+            margin-bottom: 18px;
+        }
+
+        .status-row {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .status-box {
+            background: #f7f9fc;
+            border: 1px solid #e2e7ef;
+            border-radius: 10px;
+            padding: 12px;
+            min-width: 0;
+        }
+
+        .status-box b {
+            display: block;
+            margin-bottom: 5px;
+            color: #10233f;
+        }
+
+        .status-text {
+            color: #59657a;
+            font-size: 12px;
+            line-height: 1.45;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+
+        .scope-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .scope-box {
+            border: 1px solid #e1e7f0;
+            border-radius: 10px;
+            padding: 14px;
+            background: #fbfcfe;
+        }
+
+        .scope-box strong {
+            display: block;
+            color: #10233f;
+            margin-bottom: 6px;
+        }
+
+        .scope-box p {
+            margin: 0;
+            color: #59657a;
+            line-height: 1.5;
+            font-size: 13px;
+        }
+
+        .ready {
+            color: #18864b;
+            font-weight: bold;
+        }
+
+        .pending {
+            color: #a06a00;
+            font-weight: bold;
+        }
+
+        .question-card {
+            margin-top: 14px;
+            border: 1px solid #e1e7f0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .question-header {
+            background: #f7f9fc;
+            padding: 14px 16px;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .question-body {
+            padding: 16px;
+        }
+
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #172033;
+        }
+
+        .transcript {
+            background: #fbfcfe;
+            border: 1px solid #e6ebf2;
+            border-radius: 10px;
+            padding: 13px;
+            line-height: 1.55;
+            margin-bottom: 14px;
+        }
+
+        .mini-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .mini-box {
+            background: #f7f9fc;
+            border-radius: 9px;
+            padding: 10px;
+        }
+
+        .mini-box span {
+            display: block;
+            color: #738097;
+            font-size: 11px;
+            margin-bottom: 4px;
+        }
+
+        .mini-box strong {
+            font-size: 15px;
+            color: #10233f;
+        }
+
+        .semantic-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .semantic-box {
+            background: #eef5ff;
+            border-radius: 10px;
+            padding: 13px;
+        }
+
+        .semantic-box span {
+            display: block;
+            font-size: 12px;
+            color: #5f6d84;
+            margin-bottom: 5px;
+        }
+
+        .semantic-box strong {
+            font-size: 21px;
+            color: #215eb9;
+        }
+
+        .research-note {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #59657a;
+        }
+
+        .footer-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .btn {
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 9px;
+            padding: 11px 18px;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background: #2d6cdf;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: white;
+            border: 1px solid #cad3e0;
+            color: #24324a;
+        }
+
+        @media (max-width: 900px) {
+            .grid,
+            .status-row,
+            .scope-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .mini-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grid,
+            .status-row,
+            .scope-grid,
+            .semantic-grid,
+            .mini-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topbar">
+        <h1>AEGIE Research Prototype Dashboard</h1>
+        <p>Agentic AI-Based Voice Interview Analysis · Proof-of-Concept</p>
+    </div>
+
+    <div class="container">
+
+        <div class="banner">
+            <strong>Current Development Interview:</strong>
+            {{ participant_id }} · {{ job_role }} · {{ collection_mode }}
+            <br>
+            <strong>Responses analyzed:</strong>
+            {{ response_count }} / {{ expected_count }}
+        </div>
+
+        <div class="banner integrity">
+            <strong>Research integrity:</strong>
+            This dashboard reports only evidence computed from the current
+            recorded interview. MiniLM values are semantic similarity evidence,
+            not validated interview scores. No human-study result or calibrated
+            1–5 score is claimed in this proof-of-concept.
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="metric-title">Average WPM</div>
+                <div class="metric-value">
+                    {{ avg_wpm if avg_wpm is not none else "—" }}
+                </div>
+                <div class="metric-note">Current interview only</div>
+            </div>
+
+            <div class="card">
+                <div class="metric-title">Total Fillers</div>
+                <div class="metric-value">{{ total_fillers }}</div>
+                <div class="metric-note">Objective speech feature</div>
+            </div>
+
+            <div class="card">
+                <div class="metric-title">Total Pauses</div>
+                <div class="metric-value">{{ total_pauses }}</div>
+                <div class="metric-note">Silence-based pause count</div>
+            </div>
+
+            <div class="card">
+                <div class="metric-title">Mean Semantic Evidence</div>
+                <div class="metric-value">
+                    {% if avg_semantic_mean is not none %}
+                        {{ avg_semantic_mean }}
+                    {% else %}
+                        —
+                    {% endif %}
+                </div>
+                <div class="metric-note">MiniLM whole-answer mean</div>
+            </div>
+
+        </div>
+
+        <div class="card section">
+            <h2>Agent Pipeline Status</h2>
+
+            <div class="status-row">
+
+                <div class="status-box">
+                    <b>Speech-to-Text</b>
+                    <div class="status-text">{{ stt_status }}</div>
+                </div>
+
+                <div class="status-box">
+                    <b>Evaluation Agent</b>
+                    <div class="status-text">{{ evaluation_status }}</div>
+                </div>
+
+                <div class="status-box">
+                    <b>Adaptive Agent</b>
+                    <div class="status-text">{{ adaptive_status }}</div>
+                </div>
+
+                <div class="status-box">
+                    <b>Feedback Agent</b>
+                    <div class="status-text">{{ feedback_status }}</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="card section">
+            <h2>Current Research Scope</h2>
+
+            <div class="scope-grid">
+
+                <div class="scope-box">
+                    <strong class="ready">Implemented</strong>
+                    <p>
+                        Voice capture, Parakeet STT, transcript storage,
+                        speech features, MiniLM semantic evidence,
+                        agent workflow, current-interview isolation,
+                        and evidence dashboard.
+                    </p>
+                </div>
+
+                <div class="scope-box">
+                    <strong class="ready">Measured Evidence</strong>
+                    <p>
+                        Duration, word count, WPM, fillers, pauses,
+                        whole-answer MiniLM similarity, and sentence-level
+                        MiniLM similarity.
+                    </p>
+                </div>
+
+                <div class="scope-box">
+                    <strong class="pending">Not Claimed</strong>
+                    <p>
+                        No validated 1–5 interview scoring, no population-level
+                        accuracy claim, no human-vs-AEGIE agreement claim,
+                        and no participant-study result.
+                    </p>
+                </div>
+
+                <div class="scope-box">
+                    <strong class="pending">Future Validation</strong>
+                    <p>
+                        Human annotation, calibrated scoring, held-out testing,
+                        and validated adaptive difficulty require a separately
+                        approved research study.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="card section">
+            <h2>Real Response Evidence</h2>
+
+            {% for response in responses %}
+
+            <div class="question-card">
+
+                <div class="question-header">
+                    <strong>
+                        Q{{ response.question_number }} · {{ response.question_id }}
+                    </strong>
+                    <span>{{ response.difficulty }}</span>
+                </div>
+
+                <div class="question-body">
+
+                    <div class="question-text">
+                        {{ response.question_text }}
+                    </div>
+
+                    <div class="transcript">
+                        {% if response.transcript %}
+                            {{ response.transcript }}
+                        {% else %}
+                            Transcript unavailable.
+                        {% endif %}
+                    </div>
+
+                    <div class="mini-grid">
+
+                        <div class="mini-box">
+                            <span>Duration</span>
+                            <strong>{{ response.duration_sec }} s</strong>
+                        </div>
+
+                        <div class="mini-box">
+                            <span>Word Count</span>
+                            <strong>{{ response.word_count }}</strong>
+                        </div>
+
+                        <div class="mini-box">
+                            <span>WPM</span>
+                            <strong>{{ response.wpm }}</strong>
+                        </div>
+
+                        <div class="mini-box">
+                            <span>Fillers</span>
+                            <strong>{{ response.filler_count }}</strong>
+                        </div>
+
+                        <div class="mini-box">
+                            <span>Pauses</span>
+                            <strong>{{ response.pause_count }}</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="semantic-grid">
+
+                        <div class="semantic-box">
+                            <span>Whole-answer MiniLM Mean</span>
+                            <strong>
+                                {% if response.whole_mean_similarity is not none %}
+                                    {{ response.whole_mean_similarity }}
+                                {% else %}
+                                    —
+                                {% endif %}
+                            </strong>
+                        </div>
+
+                        <div class="semantic-box">
+                            <span>Sentence-level MiniLM Mean Best</span>
+                            <strong>
+                                {% if response.sentence_mean_best_similarity is not none %}
+                                    {{ response.sentence_mean_best_similarity }}
+                                {% else %}
+                                    —
+                                {% endif %}
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+
+        <div class="card section">
+            <h2>Prototype Interpretation</h2>
+
+            <p class="research-note">
+                AEGIE demonstrates an end-to-end technical interview analysis
+                pipeline on CPU-compatible hardware. A genuine voice response
+                is recorded, transcribed using Parakeet, converted into
+                objective speech features, compared with researcher-created
+                reference answers using MiniLM, processed through the agent
+                architecture, and presented as transparent evidence.
+            </p>
+
+            <p class="research-note">
+                The DEVELOPMENT question sequence is intentionally fixed for
+                reproducible software testing. Adaptive difficulty and
+                calibrated feedback remain gated until an approved validation
+                study provides the evidence needed to justify those outputs.
+            </p>
+        </div>
+
+        <div class="footer-actions">
+            <a class="btn btn-primary" href="/">Start New Interview</a>
+            <a class="btn btn-secondary" href="javascript:window.print()">
+                Print / Save Dashboard
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>

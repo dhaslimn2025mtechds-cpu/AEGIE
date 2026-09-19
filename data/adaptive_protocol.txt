@@ -1,0 +1,69 @@
+AEGIE ADAPTIVE INTERVIEW PROTOCOL
+=================================
+
+PROJECT:
+AEGIE: A Research Framework for Adaptive Agentic AI-Based
+Voice Interview Evaluation
+
+TARGET DATASET:
+6 IT job roles
+300 real participants
+10 genuine voice responses per participant
+Total = 3,000 primary samples
+
+INTERVIEW PROCEDURE:
+1. Participant selects one of the six IT job roles.
+
+2. Each participant answers 10 interview questions.
+
+3. The interview begins with an Easy question.
+
+4. After each response, AEGIE evaluates the response using
+   the current adaptive evaluation mechanism.
+
+5. The next question difficulty is selected according to
+   the previous response performance.
+
+ADAPTIVE RULE:
+
+Low performance
+-> Easy question
+
+Moderate performance
+-> Medium question
+
+High performance
+-> Hard question
+
+6. A question already answered by the participant must
+   not be repeated.
+
+7. Question selection must remain within the participant's
+   selected IT job role.
+
+8. The interview stops after 10 genuine responses.
+
+9. Audio, transcript and objective speech features are
+   stored for research analysis.
+
+10. Human annotators independently evaluate the collected
+    responses using the predefined annotation rubric.
+
+IMPORTANT RESEARCH SEPARATION:
+Human annotation scores are research reference labels.
+
+AEGIE predicted scores must be stored separately from
+human annotation scores.
+
+Human reference labels must not be used by AEGIE during
+the live interview to choose the next question.
+
+RESEARCH COMPARISON:
+Baseline:
+Static/non-adaptive interview evaluation.
+
+Proposed:
+AEGIE adaptive agentic interview evaluation.
+
+The experimental study will compare the system outputs
+against human reference annotations.

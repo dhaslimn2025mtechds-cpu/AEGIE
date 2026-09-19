@@ -1,0 +1,4 @@
+difficulty,sample_count,whole_mean_similarity_mean,sentence_mean_best_similarity_mean,duration_sec_mean,word_count_mean,wpm_mean,filler_count_mean,pause_count_mean,filler_rate_per_100_words_mean,pause_rate_per_minute_mean
+Easy,15,0.5205,0.5273,13.9167,27.7333,121.8407,0.0,0.4667,0.0,2.1331
+Medium,12,0.4194,0.5236,20.755,35.4167,101.9083,0.1667,1.5833,0.7246,4.2364
+Hard,6,0.3798,0.4046,17.0,29.3333,104.945,0.0,1.0,0.0,3.3687

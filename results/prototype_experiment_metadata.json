@@ -1,0 +1,29 @@
+{
+  "framework": "AEGIE",
+  "experiment_type": "no-participant prototype descriptive analysis",
+  "created_utc": "2026-09-19T08:58:04.641592+00:00",
+  "source_feature_store": "data\\development_evaluation_features.csv",
+  "source_rows": 33,
+  "unique_sample_ids": 33,
+  "unique_participant_ids": 4,
+  "unique_job_roles": 1,
+  "unique_question_ids": 11,
+  "duplicate_sample_rows": 0,
+  "feature_status_counts": {
+    "EVALUATION_FEATURES_READY": 33
+  },
+  "research_scope": {
+    "validated_interview_scores": false,
+    "human_agreement_claim": false,
+    "population_accuracy_claim": false,
+    "participant_study_claim": false,
+    "purpose": "proof-of-concept system verification and descriptive evidence analysis"
+  },
+  "outputs": [
+    "results\\prototype_overall_summary.csv",
+    "results\\prototype_difficulty_summary.csv",
+    "results\\prototype_question_summary.csv",
+    "results\\prototype_data_quality.csv",
+    "results\\prototype_experiment_report.txt"
+  ]
+}

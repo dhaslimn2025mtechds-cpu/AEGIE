@@ -1,0 +1,16 @@
+check,value,status
+total_rows,33,INFO
+unique_sample_ids,33,INFO
+duplicate_sample_rows,0,PASS
+unique_participant_ids,4,INFO
+unique_job_roles,1,INFO
+unique_question_ids,11,INFO
+missing_whole_mean_similarity,0,PASS
+missing_sentence_mean_best_similarity,0,PASS
+missing_duration_sec,0,PASS
+missing_word_count,0,PASS
+missing_wpm,0,PASS
+missing_filler_count,0,PASS
+missing_pause_count,0,PASS
+missing_filler_rate_per_100_words,0,PASS
+missing_pause_rate_per_minute,0,PASS

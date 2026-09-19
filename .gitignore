@@ -1,0 +1,126 @@
+# ============================================================
+# AEGIE - Git Ignore Rules
+# Final no-participant research prototype
+# ============================================================
+
+# Python cache / compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+aegie_env/
+.venv/
+venv/
+env/
+
+# Environment / secrets
+.env
+.env.*
+*.key
+*.pem
+
+# IDE / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs / temporary files
+*.log
+*.tmp
+*.temp
+
+# ============================================================
+# LOCAL AUDIO / RECORDINGS
+# ============================================================
+
+audio/
+
+# ============================================================
+# DOWNLOADED MODEL ARTIFACTS
+# Keep model download/setup scripts in source control instead.
+# ============================================================
+
+models/
+
+# ============================================================
+# OLD WHISPER.CPP CLONE
+# Current AEGIE runtime uses Parakeet STT.
+# ============================================================
+
+whisper.cpp/
+
+# ============================================================
+# LOCAL / DEVELOPMENT DATA
+# Do not publish raw development or abandoned participant-study data.
+# ============================================================
+
+data/backups/
+data/dataset_backup_*.csv
+data/development_dataset.csv
+data/development_evaluation_features.csv
+data/dataset.csv
+data/pilot_*.csv
+
+# ============================================================
+# LOCAL ANNOTATION DATA / ABANDONED PILOT MATERIAL
+# ============================================================
+
+annotations/human_annotations.csv
+annotations/pilot_annotation_protocol.txt
+annotations/pilot_human_annotations.csv
+
+# ============================================================
+# LOCAL RESEARCH-STUDY DOCUMENT
+# Final public scope is kept separately.
+# ============================================================
+
+research_documents/pilot_participant_information_and_consent.txt
+
+# ============================================================
+# LOCAL DEVELOPMENT BACKUPS
+# ============================================================
+
+app_before_*.py
+src/agents/aegie_agents_before_*.py
+
+# ============================================================
+# RETIRED / REDUNDANT AGENT FILES
+# ============================================================
+
+src/agents/semantic_model.py
+src/agents/software_reference_validator.py
+
+# OLD STT EXPERIMENTS
+src/download_moonshine_model.py
+src/test_moonshine_aegie_audio.py
+src/download_whisper_model.py
+src/whisper_adapter.py
+src/download_sherpa_model.py
+src/test_sherpa_aegie_audio.py
+src/test_sherpa_stt.py
+src/speech_to_text.py
+
+# ABANDONED / FUTURE PARTICIPANT-STUDY UTILITIES
+src/archive_pilot_test.py
+src/assign_pilot_splits.py
+src/calculate_inter_rater_agreement.py
+src/check_pilot_annotations.py
+src/check_pilot_readiness.py
+src/create_annotation_template.py
+src/create_pilot_annotation_schema.py
+src/create_pilot_consent_registry.py
+src/create_pilot_plan.py
+src/evaluate_frozen_test.py
+src/prepare_calibration_data.py
+src/train_calibrated_scoring.py
+src/separate_development_data.py
+src/validate_annotations.py
+
+# OLD / REDUNDANT VALIDATION UTILITIES
+src/check_environment.py
+src/upgrade_dataset.py
+src/validate_dataset.py
+src/agents/reference_validator.py

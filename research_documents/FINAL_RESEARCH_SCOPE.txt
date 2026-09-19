@@ -1,0 +1,88 @@
+AEGIE — FINAL RESEARCH SCOPE (NO-PARTICIPANT VERSION)
+
+Project Title
+AEGIE: A Research Framework for Agentic AI-Based Voice Interview Analysis
+
+1. Research Goal
+Design and implement a working voice-interview research framework that combines:
+- genuine voice capture
+- Parakeet speech-to-text
+- objective speech-feature extraction
+- MiniLM-based semantic evidence
+- agent-based evaluation workflow
+- transparent result reporting
+
+2. Current Approved Research Scope
+The project is evaluated as a research framework and proof-of-concept system.
+No unapproved participant study is conducted.
+
+3. Data Used
+- Researcher-created interview questions and reference answers
+- Developer/researcher-owned genuine voice recordings for system testing
+- No synthetic participant responses
+- No external research participant dataset presented as original AEGIE data
+- No unapproved third-party participant recordings
+
+4. Implemented Pipeline
+Voice Response
+→ Audio Processing
+→ Parakeet STT
+→ Transcript
+→ Speech Features
+→ MiniLM Semantic Evidence
+→ Evaluation Agent
+→ Research Dashboard
+
+5. Speech Features
+- duration
+- word count
+- words per minute
+- filler-word count
+- pause count
+
+6. Semantic Evidence
+MiniLM is used to compare the transcribed response with researcher-created reference answers.
+Raw cosine similarity is treated as semantic evidence, not as a validated 1–5 interview score.
+
+7. Agentic Components
+- Interview Agent
+- Evaluation Agent
+- Adaptive Decision Agent architecture
+- Feedback Agent architecture
+
+The adaptive and feedback stages remain calibration-gated when validated scoring is unavailable.
+
+8. Research Experiments in Current Scope
+- end-to-end pipeline verification
+- STT runtime measurement
+- transcript inspection
+- speech-feature extraction verification
+- MiniLM semantic-evidence analysis across questions
+- current-interview data-isolation verification
+- agent-status and calibration-gate verification
+- dashboard evidence reporting
+
+9. Not Claimed in Current Scope
+- population-level candidate evaluation accuracy
+- validated 1–5 interview scoring
+- human-vs-AEGIE agreement
+- generalization across participants
+- validated adaptive-difficulty effectiveness
+
+10. Future Work
+Subject to mentor/institutional approval:
+- multi-participant pilot study
+- independent human annotation
+- calibrated scoring model
+- held-out test evaluation
+- validated adaptive policy
+- larger-scale study
+
+11. Research Integrity Statement
+AEGIE does not fabricate missing human labels, calibrated scores, or experimental results.
+Unavailable outputs remain explicitly marked as pending/not performed.
+
+12. Final Contribution
+The contribution is an implemented and reproducible research framework showing how voice transcription,
+speech evidence, semantic evidence, and multiple AI agents can be integrated into a transparent technical
+interview analysis pipeline on CPU-compatible hardware.

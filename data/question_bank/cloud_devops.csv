@@ -1,0 +1,13 @@
+question_id,job_role,difficulty,question_text
+CD_E01,Cloud DevOps Engineer,Easy,What is cloud computing?
+CD_E02,Cloud DevOps Engineer,Easy,What is the difference between a virtual machine and a container?
+CD_E03,Cloud DevOps Engineer,Easy,What is version control and why is Git used?
+CD_E04,Cloud DevOps Engineer,Easy,What is continuous integration?
+CD_M01,Cloud DevOps Engineer,Medium,Explain the difference between continuous integration and continuous deployment.
+CD_M02,Cloud DevOps Engineer,Medium,What is containerization and why is it useful in application deployment?
+CD_M03,Cloud DevOps Engineer,Medium,How would you monitor the health of an application running in the cloud?
+CD_M04,Cloud DevOps Engineer,Medium,What is infrastructure as code and what problem does it solve?
+CD_H01,Cloud DevOps Engineer,Hard,How would you design a highly available cloud application that can tolerate server failures?
+CD_H02,Cloud DevOps Engineer,Hard,How would you investigate and recover from a failed production deployment?
+CD_H03,Cloud DevOps Engineer,Hard,How would you design an auto-scaling strategy for an application with unpredictable traffic?
+CD_H04,Cloud DevOps Engineer,Hard,How would you implement a deployment strategy that minimizes downtime and allows safe rollback?

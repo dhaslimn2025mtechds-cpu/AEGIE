@@ -1,0 +1,13 @@
+question_id,job_role,difficulty,question_text
+DA_E01,Data Analyst,Easy,What is the difference between mean and median?
+DA_E02,Data Analyst,Easy,What is a primary key in a database?
+DA_E03,Data Analyst,Easy,What is the purpose of data visualization?
+DA_E04,Data Analyst,Easy,What is the difference between structured and unstructured data?
+DA_M01,Data Analyst,Medium,How would you handle missing values in a dataset?
+DA_M02,Data Analyst,Medium,Explain the difference between WHERE and HAVING in SQL.
+DA_M03,Data Analyst,Medium,What is correlation and how is it different from causation?
+DA_M04,Data Analyst,Medium,How would you identify outliers in a dataset?
+DA_H01,Data Analyst,Hard,How would you determine whether a change in a business metric is statistically significant?
+DA_H02,Data Analyst,Hard,How would you analyze a dataset when two variables are highly correlated?
+DA_H03,Data Analyst,Hard,How would you design an A/B test to evaluate a new product feature?
+DA_H04,Data Analyst,Hard,How would you investigate a sudden decrease in monthly sales using data?

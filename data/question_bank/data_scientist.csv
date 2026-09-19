@@ -1,0 +1,13 @@
+question_id,job_role,difficulty,question_text
+DS_E01,Data Scientist,Easy,What is the difference between supervised and unsupervised learning?
+DS_E02,Data Scientist,Easy,What is overfitting in machine learning?
+DS_E03,Data Scientist,Easy,What is the difference between a population and a sample?
+DS_E04,Data Scientist,Easy,Why do we split a dataset into training and testing data?
+DS_M01,Data Scientist,Medium,Explain the bias-variance tradeoff in machine learning.
+DS_M02,Data Scientist,Medium,What is cross-validation and why is it useful?
+DS_M03,Data Scientist,Medium,What is the difference between L1 and L2 regularization?
+DS_M04,Data Scientist,Medium,How would you handle an imbalanced classification dataset?
+DS_H01,Data Scientist,Hard,How would you detect and prevent data leakage in a machine learning project?
+DS_H02,Data Scientist,Hard,How would you select an appropriate evaluation metric for an imbalanced classification problem?
+DS_H03,Data Scientist,Hard,How would you determine whether adding a new feature genuinely improves a predictive model?
+DS_H04,Data Scientist,Hard,How would you investigate a machine learning model that performs well during training but poorly on new data?

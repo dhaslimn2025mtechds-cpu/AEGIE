@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AEGIE Research Interview</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 750px;
+            max-width: 90%;
+            margin: 40px auto;
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.10);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .info-box {
+            background: #f5f5f5;
+            padding: 18px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .info-box p {
+            margin: 8px 0;
+        }
+
+        .question-box {
+            padding: 25px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .question-box h2 {
+            line-height: 1.5;
+        }
+
+        .record-box {
+            padding: 25px;
+            background: #fafafa;
+            border-radius: 8px;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin-right: 10px;
+            margin-top: 10px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+
+        #status {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        #saveStatus {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .warning {
+            margin-top: 25px;
+            font-size: 13px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <h1>AEGIE</h1>
+
+    <p class="subtitle">
+        Adaptive Agentic AI-Based Voice Interview Evaluation
+    </p>
+
+
+    <div class="info-box">
+
+        <p>
+            <b>Participant ID:</b>
+            {{ participant_id }}
+        </p>
+
+        <p>
+            <b>Job Role:</b>
+            {{ job_role }}
+        </p>
+
+        <p>
+            <b>Question:</b>
+            {{ question_number }} / {{ total_questions }}
+        </p>
+
+        <p>
+            <b>Difficulty:</b>
+            {{ difficulty }}
+        </p>
+
+        <p>
+            <b>Question ID:</b>
+            {{ question_id }}
+        </p>
+
+    </div>
+
+
+    <div class="question-box">
+
+        <h3>Interview Question</h3>
+
+        <h2>
+            {{ question_text }}
+        </h2>
+
+    </div>
+
+
+    <div class="record-box">
+
+        <h3>Voice Response</h3>
+
+        <p>
+            Click Start Recording and answer the question
+            naturally using your own voice.
+        </p>
+
+
+        <button
+            id="startBtn"
+            type="button"
+            onclick="startRecording()"
+        >
+            Start Recording
+        </button>
+
+
+        <button
+            id="stopBtn"
+            type="button"
+            onclick="stopRecording()"
+            disabled
+        >
+            Stop Recording
+        </button>
+
+
+        <p id="status">
+            Ready to record
+        </p>
+
+
+        <audio
+            id="audioPlayer"
+            controls
+            style="display:none;"
+        >
+        </audio>
+
+
+        <br>
+
+
+        <button
+            id="saveBtn"
+            type="button"
+            onclick="saveRecording()"
+            disabled
+        >
+            Save Voice Response
+        </button>
+
+
+        <p id="saveStatus"></p>
+
+    </div>
+
+
+    <p class="warning">
+        Research data collection: only genuine participant
+        voice responses should be recorded.
+    </p>
+
+</div>
+
+
+<script>
+
+    let mediaRecorder = null;
+
+    let audioChunks = [];
+
+    let audioBlob = null;
+
+    let activeStream = null;
+
+    let saved = false;
+
+
+    async function startRecording() {
+
+        try {
+
+            document.getElementById("saveStatus").innerText = "";
+
+            audioBlob = null;
+
+            audioChunks = [];
+
+            saved = false;
+
+
+            activeStream =
+                await navigator.mediaDevices.getUserMedia({
+                    audio: true
+                });
+
+
+            let options = {};
+
+
+            /*
+            Chrome normally supports WebM/Opus.
+            Check support before explicitly requesting it.
+            */
+
+            if (
+                MediaRecorder.isTypeSupported(
+                    "audio/webm;codecs=opus"
+                )
+            ) {
+
+                options = {
+                    mimeType: "audio/webm;codecs=opus"
+                };
+
+            }
+
+
+            mediaRecorder =
+                new MediaRecorder(
+                    activeStream,
+                    options
+                );
+
+
+            mediaRecorder.ondataavailable =
+                function(event) {
+
+                    if (event.data.size > 0) {
+
+                        audioChunks.push(
+                            event.data
+                        );
+
+                    }
+
+                };
+
+
+            mediaRecorder.onstop =
+                function() {
+
+                    const mimeType =
+                        mediaRecorder.mimeType ||
+                        "audio/webm";
+
+
+                    audioBlob =
+                        new Blob(
+                            audioChunks,
+                            {
+                                type: mimeType
+                            }
+                        );
+
+
+                    const audioURL =
+                        URL.createObjectURL(
+                            audioBlob
+                        );
+
+
+                    const player =
+                        document.getElementById(
+                            "audioPlayer"
+                        );
+
+
+                    player.src = audioURL;
+
+                    player.style.display =
+                        "block";
+
+
+                    document.getElementById(
+                        "saveBtn"
+                    ).disabled = false;
+
+
+                    document.getElementById(
+                        "status"
+                    ).innerText =
+                        "Recording stopped. Play the audio and check your response.";
+
+
+                    if (activeStream) {
+
+                        activeStream
+                            .getTracks()
+                            .forEach(
+                                track => track.stop()
+                            );
+
+                    }
+
+                };
+
+
+            mediaRecorder.start();
+
+
+            document.getElementById(
+                "status"
+            ).innerText =
+                "Recording... Speak your answer.";
+
+
+            document.getElementById(
+                "startBtn"
+            ).disabled = true;
+
+
+            document.getElementById(
+                "stopBtn"
+            ).disabled = false;
+
+
+            document.getElementById(
+                "saveBtn"
+            ).disabled = true;
+
+        }
+
+        catch (error) {
+
+            document.getElementById(
+                "status"
+            ).innerText =
+                "Microphone error: " +
+                error.message;
+
+        }
+
+    }
+
+
+
+    function stopRecording() {
+
+        if (
+            mediaRecorder &&
+            mediaRecorder.state === "recording"
+        ) {
+
+            mediaRecorder.stop();
+
+
+            document.getElementById(
+                "startBtn"
+            ).disabled = false;
+
+
+            document.getElementById(
+                "stopBtn"
+            ).disabled = true;
+
+        }
+
+    }
+
+
+
+    async function saveRecording() {
+
+        if (!audioBlob) {
+
+            alert(
+                "Please record your answer first."
+            );
+
+            return;
+
+        }
+
+
+        if (saved) {
+
+            return;
+
+        }
+
+
+        saved = true;
+
+
+        const saveButton =
+            document.getElementById(
+                "saveBtn"
+            );
+
+
+        saveButton.disabled = true;
+
+
+        document.getElementById(
+            "startBtn"
+        ).disabled = true;
+
+
+        document.getElementById(
+            "saveStatus"
+        ).innerText =
+            "Saving voice response...";
+
+
+        const formData =
+            new FormData();
+
+
+        formData.append(
+            "audio",
+            audioBlob,
+            "response.webm"
+        );
+
+
+        try {
+
+            const response =
+                await fetch(
+                    "/save_audio",
+                    {
+                        method: "POST",
+                        body: formData
+                    }
+                );
+
+
+            const result =
+                await response.json();
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    result.message ||
+                    "Unable to save recording."
+                );
+
+            }
+
+
+            document.getElementById(
+                "saveStatus"
+            ).innerText =
+                result.message +
+                " Loading next question...";
+
+
+            /*
+            app.py returns next_url.
+            After one second we move to the next question.
+            */
+
+            setTimeout(
+                function() {
+
+                    window.location.href =
+                        result.next_url;
+
+                },
+                1000
+            );
+
+        }
+
+        catch (error) {
+
+            saved = false;
+
+            saveButton.disabled = false;
+
+            document.getElementById(
+                "startBtn"
+            ).disabled = false;
+
+
+            document.getElementById(
+                "saveStatus"
+            ).innerText =
+                "Error: " +
+                error.message;
+
+        }
+
+    }
+
+</script>
+
+
+</body>
+
+</html>

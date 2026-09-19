@@ -1,0 +1,10 @@
+measure,count,mean,std,min,max
+whole_mean_similarity,33,0.4582,0.1273,0.2155,0.732
+sentence_mean_best_similarity,33,0.5037,0.1371,0.2155,0.7622
+duration_sec,33,16.9639,6.2675,4.86,28.86
+word_count,33,30.8182,10.3485,9.0,52.0
+wpm,33,111.5206,14.0934,87.5,143.84
+filler_count,33,0.0606,0.2423,0.0,1.0
+pause_count,33,0.9697,1.1855,0.0,5.0
+filler_rate_per_100_words,33,0.2635,1.0535,0.0,4.3478
+pause_rate_per_minute,33,3.1226,3.2744,0.0,10.9369

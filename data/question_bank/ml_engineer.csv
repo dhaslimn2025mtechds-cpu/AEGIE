@@ -1,0 +1,13 @@
+question_id,job_role,difficulty,question_text
+MLE_E01,Machine Learning Engineer,Easy,What is the difference between training data and testing data?
+MLE_E02,Machine Learning Engineer,Easy,What is feature scaling and why is it used?
+MLE_E03,Machine Learning Engineer,Easy,What is the purpose of a machine learning model?
+MLE_E04,Machine Learning Engineer,Easy,What is the difference between classification and regression?
+MLE_M01,Machine Learning Engineer,Medium,How would you handle missing values before training a machine learning model?
+MLE_M02,Machine Learning Engineer,Medium,How would you detect overfitting and reduce it?
+MLE_M03,Machine Learning Engineer,Medium,Explain the purpose of hyperparameter tuning.
+MLE_M04,Machine Learning Engineer,Medium,How would you choose between precision recall and F1 score for a classification problem?
+MLE_H01,Machine Learning Engineer,Hard,How would you detect model drift after deploying a machine learning model?
+MLE_H02,Machine Learning Engineer,Hard,How would you design a machine learning inference system that handles a large number of requests?
+MLE_H03,Machine Learning Engineer,Hard,How would you monitor the performance of a machine learning model in production when ground-truth labels are delayed?
+MLE_H04,Machine Learning Engineer,Hard,How would you safely deploy a new model version while minimizing the risk of performance degradation?
