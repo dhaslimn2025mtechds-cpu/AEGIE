@@ -690,8 +690,7 @@ if __name__ == "__main__":
     )
 
     print(
-        "No samples were added to the "
-        "3000-sample research dataset."
+        "No participant-study samples were added."
     )
 
     print(
