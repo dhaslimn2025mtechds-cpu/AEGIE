@@ -1,155 +1,513 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AEGIE Research Interview</title>
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<style>
+*{
+    box-sizing:border-box;
+}
 
-    <title>AEGIE Research Interview</title>
+body{
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#eef4ff,#f8fafc,#eef7f4);
+    margin:0;
+    color:#1f2937;
+}
 
-    <style>
+.container{
+    width:980px;
+    max-width:94%;
+    margin:28px auto;
+    background:#fff;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 12px 35px rgba(15,23,42,.1);
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f8;
-            margin: 0;
-            padding: 0;
-        }
+.header{
+    text-align:center;
+    margin-bottom:22px;
+}
 
-        .container {
-            width: 750px;
-            max-width: 90%;
-            margin: 40px auto;
-            background: white;
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.10);
-        }
+.header h1{
+    margin:0;
+    font-size:38px;
+}
 
-        h1 {
-            text-align: center;
-            margin-bottom: 5px;
-        }
+.subtitle{
+    color:#64748b;
+    margin:7px 0;
+}
 
-        .subtitle {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+.scope{
+    display:inline-block;
+    margin-top:8px;
+    padding:7px 12px;
+    border-radius:999px;
+    background:#eef2ff;
+    color:#4338ca;
+    font-size:12px;
+    font-weight:700;
+}
 
-        .info-box {
-            background: #f5f5f5;
-            padding: 18px;
-            border-radius: 8px;
-            margin-bottom: 25px;
-        }
+.top-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    margin-bottom:18px;
+}
 
-        .info-box p {
-            margin: 8px 0;
-        }
+.panel,
+.question-box,
+.record-box,
+.pipeline-box,
+.agents-box{
+    border:1px solid #e2e8f0;
+    border-radius:15px;
+    padding:20px;
+    background:#fff;
+}
 
-        .question-box {
-            padding: 25px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            margin-bottom: 25px;
-        }
+.info-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
 
-        .question-box h2 {
-            line-height: 1.5;
-        }
+.info{
+    background:#f8fafc;
+    border-radius:10px;
+    padding:11px;
+}
 
-        .record-box {
-            padding: 25px;
-            background: #fafafa;
-            border-radius: 8px;
-        }
+.label{
+    display:block;
+    font-size:10px;
+    text-transform:uppercase;
+    color:#64748b;
+    font-weight:700;
+    margin-bottom:4px;
+}
 
-        button {
-            padding: 12px 20px;
-            margin-right: 10px;
-            margin-top: 10px;
-            font-size: 15px;
-            cursor: pointer;
-        }
+.value{
+    font-weight:700;
+}
 
-        button:disabled {
-            cursor: not-allowed;
-            opacity: 0.5;
-        }
+.badge{
+    display:inline-block;
+    padding:5px 10px;
+    border-radius:999px;
+    background:#fff7ed;
+    color:#c2410c;
+    font-size:13px;
+    font-weight:700;
+}
 
-        #status {
-            margin-top: 20px;
-            font-weight: bold;
-        }
+.progress-row{
+    display:flex;
+    justify-content:space-between;
+    font-size:12px;
+    color:#64748b;
+    margin-bottom:8px;
+}
 
-        #saveStatus {
-            margin-top: 15px;
-            font-weight: bold;
-        }
+.progress-track{
+    height:12px;
+    background:#e2e8f0;
+    border-radius:999px;
+    overflow:hidden;
+}
 
-        audio {
-            width: 100%;
-            margin-top: 20px;
-        }
+.progress-fill{
+    height:100%;
+    width:0;
+    background:linear-gradient(90deg,#2563eb,#06b6d4);
+    transition:.4s;
+}
 
-        .warning {
-            margin-top: 25px;
-            font-size: 13px;
-        }
+.question-box{
+    margin-bottom:18px;
+    background:linear-gradient(135deg,#eff6ff,#fff);
+}
 
-    </style>
+.question-box h3{
+    margin:0 0 10px;
+    color:#2563eb;
+    font-size:13px;
+    text-transform:uppercase;
+}
 
+.question-box h2{
+    margin:0;
+    line-height:1.5;
+    font-size:22px;
+}
+
+.record-box{
+    margin-bottom:18px;
+    background:#fafafa;
+}
+
+.record-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.timer{
+    font-family:Consolas,monospace;
+    background:#0f172a;
+    color:#fff;
+    padding:8px 13px;
+    border-radius:10px;
+    font-size:24px;
+    font-weight:700;
+}
+
+.wave{
+    height:72px;
+    background:#0f172a;
+    border-radius:12px;
+    margin:15px 0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+    padding:12px;
+}
+
+.bar{
+    width:6px;
+    height:14px;
+    background:#38bdf8;
+    border-radius:999px;
+    opacity:.35;
+}
+
+.wave.recording .bar{
+    opacity:1;
+    animation:pulse .75s ease-in-out infinite alternate;
+}
+
+.wave.recording .bar:nth-child(2n){
+    animation-delay:.08s;
+}
+
+.wave.recording .bar:nth-child(3n){
+    animation-delay:.16s;
+}
+
+.wave.recording .bar:nth-child(4n){
+    animation-delay:.24s;
+}
+
+@keyframes pulse{
+    from{height:12px}
+    to{height:48px}
+}
+
+.buttons{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+button{
+    border:0;
+    border-radius:10px;
+    padding:12px 18px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+button:disabled{
+    opacity:.45;
+    cursor:not-allowed;
+}
+
+#startBtn{
+    background:#16a34a;
+    color:#fff;
+}
+
+#stopBtn{
+    background:#dc2626;
+    color:#fff;
+}
+
+#saveBtn{
+    background:#2563eb;
+    color:#fff;
+}
+
+.status{
+    margin-top:14px;
+    padding:11px 13px;
+    border-radius:10px;
+    background:#f1f5f9;
+    font-size:14px;
+    font-weight:700;
+}
+
+audio{
+    width:100%;
+    margin-top:15px;
+}
+
+.pipeline-box,
+.agents-box{
+    margin-bottom:18px;
+}
+
+.pipeline-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:14px;
+}
+
+.pipeline-title h3,
+.agents-box h3{
+    margin:0;
+}
+
+.pipeline{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:9px;
+}
+
+.stage{
+    min-height:82px;
+    border:1px solid #e2e8f0;
+    background:#f8fafc;
+    border-radius:11px;
+    padding:10px;
+    text-align:center;
+}
+
+.stage-icon{
+    display:block;
+    font-size:21px;
+    margin-bottom:6px;
+}
+
+.stage-name{
+    font-size:11px;
+    font-weight:700;
+    display:block;
+}
+
+.stage-status{
+    font-size:9px;
+    color:#94a3b8;
+    margin-top:5px;
+    display:block;
+}
+
+.stage.active{
+    border-color:#3b82f6;
+    background:#eff6ff;
+}
+
+.stage.done{
+    border-color:#22c55e;
+    background:#f0fdf4;
+}
+
+.stage.pending{
+    border-color:#f59e0b;
+    background:#fffbeb;
+}
+
+.agents{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.agent{
+    border:1px solid #e2e8f0;
+    background:#f8fafc;
+    border-radius:11px;
+    padding:13px;
+}
+
+.agent-name{
+    font-size:11px;
+    font-weight:700;
+    margin-bottom:7px;
+}
+
+.agent-status{
+    font-size:10px;
+    color:#64748b;
+    word-break:break-word;
+}
+
+.agent.done{
+    border-color:#22c55e;
+    background:#f0fdf4;
+}
+
+.agent.wait{
+    border-color:#f59e0b;
+    background:#fffbeb;
+}
+
+.agent.run{
+    border-color:#3b82f6;
+    background:#eff6ff;
+}
+
+.result{
+    display:none;
+    margin-top:15px;
+    border:1px solid #bbf7d0;
+    background:#f0fdf4;
+    border-radius:12px;
+    padding:14px;
+}
+
+.result-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+}
+
+.result-item{
+    background:#fff;
+    border-radius:9px;
+    padding:9px;
+    border:1px solid #dcfce7;
+}
+
+.result-item span{
+    display:block;
+    font-size:9px;
+    color:#64748b;
+    margin-bottom:4px;
+}
+
+.note{
+    margin-top:15px;
+    padding:11px 13px;
+    border-left:4px solid #6366f1;
+    background:#f5f3ff;
+    border-radius:8px;
+    color:#4c1d95;
+    font-size:11px;
+    line-height:1.45;
+}
+
+@media(max-width:820px){
+    .top-grid,
+    .agents,
+    .info-grid,
+    .result-grid{
+        grid-template-columns:1fr;
+    }
+
+    .pipeline{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+</style>
 </head>
-
 
 <body>
 
 <div class="container">
 
-    <h1>AEGIE</h1>
-
-    <p class="subtitle">
-        Adaptive Agentic AI-Based Voice Interview Evaluation
-    </p>
-
-
-    <div class="info-box">
-
-        <p>
-            <b>Participant ID:</b>
-            {{ participant_id }}
+    <div class="header">
+        <h1>AEGIE</h1>
+        <p class="subtitle">
+            Agentic AI-Based Voice Interview Analysis
         </p>
 
-        <p>
-            <b>Job Role:</b>
-            {{ job_role }}
-        </p>
+        <span class="scope">
+            DEVELOPMENT PROOF-OF-CONCEPT · MEASURED EVIDENCE ONLY
+        </span>
+    </div>
 
-        <p>
-            <b>Question:</b>
-            {{ question_number }} / {{ total_questions }}
-        </p>
 
-        <p>
-            <b>Difficulty:</b>
-            {{ difficulty }}
-        </p>
+    <div class="top-grid">
 
-        <p>
-            <b>Question ID:</b>
-            {{ question_id }}
-        </p>
+        <div class="panel">
+
+            <h3 style="margin-top:0">
+                Interview Session
+            </h3>
+
+            <div class="info-grid">
+
+                <div class="info">
+                    <span class="label">Development ID</span>
+                    <span class="value">{{ participant_id }}</span>
+                </div>
+
+                <div class="info">
+                    <span class="label">Job Role</span>
+                    <span class="value">{{ job_role }}</span>
+                </div>
+
+                <div class="info">
+                    <span class="label">Question ID</span>
+                    <span class="value">{{ question_id }}</span>
+                </div>
+
+                <div class="info">
+                    <span class="label">Difficulty</span>
+                    <span class="badge">{{ difficulty }}</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="panel">
+
+            <h3 style="margin-top:0">
+                Interview Progress
+            </h3>
+
+            <div class="progress-row">
+                <span>
+                    Question {{ question_number }} of {{ total_questions }}
+                </span>
+
+                <span id="progressPercent">
+                    0%
+                </span>
+            </div>
+
+            <div class="progress-track">
+                <div
+                    id="progressFill"
+                    class="progress-fill">
+                </div>
+            </div>
+
+            <div class="note">
+                Current DEVELOPMENT flow uses a fixed
+                5-question sequence for reproducible
+                software testing.
+            </div>
+
+        </div>
 
     </div>
 
 
     <div class="question-box">
 
-        <h3>Interview Question</h3>
+        <h3>
+            Current Technical Question
+        </h3>
 
         <h2>
             {{ question_text }}
@@ -160,397 +518,1203 @@
 
     <div class="record-box">
 
-        <h3>Voice Response</h3>
+        <div class="record-top">
 
-        <p>
-            Click Start Recording and answer the question
-            naturally using your own voice.
-        </p>
+            <div>
+
+                <h3 style="margin:0">
+                    Voice Response
+                </h3>
+
+                <div style="
+                    font-size:11px;
+                    color:#64748b;
+                    margin-top:5px;
+                ">
+                    Record, review, then analyze the answer.
+                </div>
+
+            </div>
+
+            <div
+                id="recordTimer"
+                class="timer">
+                00:00
+            </div>
+
+        </div>
 
 
-        <button
-            id="startBtn"
-            type="button"
-            onclick="startRecording()"
-        >
-            Start Recording
-        </button>
+        <div
+            id="wave"
+            class="wave">
+
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+
+        </div>
 
 
-        <button
-            id="stopBtn"
-            type="button"
-            onclick="stopRecording()"
-            disabled
-        >
-            Stop Recording
-        </button>
+        <div class="buttons">
+
+            <button
+                id="startBtn"
+                type="button"
+                onclick="startRecording()">
+                🎤 Start Recording
+            </button>
+
+            <button
+                id="stopBtn"
+                type="button"
+                onclick="stopRecording()"
+                disabled>
+                ⏹ Stop Recording
+            </button>
+
+            <button
+                id="saveBtn"
+                type="button"
+                onclick="saveRecording()"
+                disabled>
+                ⚙ Analyze & Save
+            </button>
+
+        </div>
 
 
-        <p id="status">
+        <div
+            id="status"
+            class="status">
             Ready to record
-        </p>
+        </div>
 
 
         <audio
             id="audioPlayer"
             controls
-            style="display:none;"
-        >
+            style="display:none">
         </audio>
 
 
-        <br>
+        <div
+            id="result"
+            class="result">
 
+            <strong style="color:#166534">
+                Response Processed Successfully
+            </strong>
 
-        <button
-            id="saveBtn"
-            type="button"
-            onclick="saveRecording()"
-            disabled
-        >
-            Save Voice Response
-        </button>
+            <div
+                class="result-grid"
+                style="margin-top:10px">
 
+                <div class="result-item">
+                    <span>Duration</span>
+                    <strong id="durationValue">—</strong>
+                </div>
 
-        <p id="saveStatus"></p>
+                <div class="result-item">
+                    <span>Pauses</span>
+                    <strong id="pauseValue">—</strong>
+                </div>
+
+                <div class="result-item">
+                    <span>Audio Quality</span>
+                    <strong id="qualityValue">—</strong>
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 
 
-    <p class="warning">
-        Research data collection: only genuine participant
-        voice responses should be recorded.
-    </p>
+    <div class="pipeline-box">
+
+        <div class="pipeline-title">
+
+            <h3>
+                Live AEGIE Processing Pipeline
+            </h3>
+
+            <span
+                id="pipelineMessage"
+                style="font-size:11px;color:#64748b">
+                Waiting for voice input
+            </span>
+
+        </div>
+
+
+        <div class="pipeline">
+
+            <div
+                id="stageVoice"
+                class="stage">
+
+                <span class="stage-icon">🎤</span>
+                <span class="stage-name">Voice Input</span>
+                <span class="stage-status">Waiting</span>
+
+            </div>
+
+
+            <div
+                id="stageAudio"
+                class="stage">
+
+                <span class="stage-icon">🎧</span>
+                <span class="stage-name">Audio Features</span>
+                <span class="stage-status">Waiting</span>
+
+            </div>
+
+
+            <div
+                id="stageSTT"
+                class="stage">
+
+                <span class="stage-icon">📝</span>
+                <span class="stage-name">Parakeet STT</span>
+                <span class="stage-status">Waiting</span>
+
+            </div>
+
+
+            <div
+                id="stageSemantic"
+                class="stage">
+
+                <span class="stage-icon">🧠</span>
+                <span class="stage-name">MiniLM Evidence</span>
+                <span class="stage-status">Waiting</span>
+
+            </div>
+
+
+            <div
+                id="stageAgents"
+                class="stage">
+
+                <span class="stage-icon">🤖</span>
+                <span class="stage-name">Agent Workflow</span>
+                <span class="stage-status">Waiting</span>
+
+            </div>
+
+
+            <div
+                id="stageDone"
+                class="stage">
+
+                <span class="stage-icon">📊</span>
+                <span class="stage-name">Evidence Ready</span>
+                <span class="stage-status">Waiting</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="agents-box">
+
+        <h3>
+            Agent Status
+        </h3>
+
+        <div
+            class="agents"
+            style="margin-top:14px">
+
+            <div class="agent done">
+
+                <div class="agent-name">
+                    ✅ Interview Agent
+                </div>
+
+                <div class="agent-status">
+                    QUESTION_READY
+                </div>
+
+            </div>
+
+
+            <div
+                id="agentEvaluation"
+                class="agent">
+
+                <div class="agent-name">
+                    Evaluation Agent
+                </div>
+
+                <div
+                    id="evaluationStatus"
+                    class="agent-status">
+                    Waiting for response
+                </div>
+
+            </div>
+
+
+            <div
+                id="agentAdaptive"
+                class="agent">
+
+                <div class="agent-name">
+                    Adaptive Agent
+                </div>
+
+                <div
+                    id="adaptiveStatus"
+                    class="agent-status">
+                    Calibration-gated
+                </div>
+
+            </div>
+
+
+            <div
+                id="agentFeedback"
+                class="agent">
+
+                <div class="agent-name">
+                    Feedback Agent
+                </div>
+
+                <div
+                    id="feedbackStatus"
+                    class="agent-status">
+                    Calibration-gated
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="note">
+            AEGIE reports measured evidence only.
+            Validated 1–5 scoring and adaptive decisions
+            remain gated until proper human calibration
+            and validation are available.
+        </div>
+
+    </div>
 
 </div>
 
 
 <script>
 
-    let mediaRecorder = null;
+let mediaRecorder = null;
+let audioChunks = [];
+let audioBlob = null;
+let activeStream = null;
+let saved = false;
 
-    let audioChunks = [];
-
-    let audioBlob = null;
-
-    let activeStream = null;
-
-    let saved = false;
-
-
-    async function startRecording() {
-
-        try {
-
-            document.getElementById("saveStatus").innerText = "";
-
-            audioBlob = null;
-
-            audioChunks = [];
-
-            saved = false;
+let timerInterval = null;
+let seconds = 0;
 
 
-            activeStream =
-                await navigator.mediaDevices.getUserMedia({
+const currentQuestion =
+    Number("{{ question_number }}");
+
+const totalQuestions =
+    Number("{{ total_questions }}");
+
+
+const pct =
+    Math.min(
+        100,
+        Math.max(
+            0,
+            Math.round(
+                (currentQuestion / totalQuestions) * 100
+            )
+        )
+    );
+
+
+document.getElementById(
+    "progressFill"
+).style.width =
+    pct + "%";
+
+
+document.getElementById(
+    "progressPercent"
+).innerText =
+    pct + "%";
+
+
+function fmt(s) {
+
+    return (
+        String(
+            Math.floor(s / 60)
+        ).padStart(2, "0")
+        +
+        ":"
+        +
+        String(
+            s % 60
+        ).padStart(2, "0")
+    );
+
+}
+
+
+function startTimer() {
+
+    stopTimer();
+
+    seconds = 0;
+
+    document.getElementById(
+        "recordTimer"
+    ).innerText =
+        "00:00";
+
+
+    timerInterval =
+        setInterval(
+            function() {
+
+                seconds++;
+
+                document.getElementById(
+                    "recordTimer"
+                ).innerText =
+                    fmt(seconds);
+
+            },
+            1000
+        );
+
+}
+
+
+function stopTimer() {
+
+    if (timerInterval) {
+
+        clearInterval(
+            timerInterval
+        );
+
+        timerInterval = null;
+
+    }
+
+}
+
+
+function setStage(
+    id,
+    mode,
+    status
+) {
+
+    const element =
+        document.getElementById(id);
+
+    element.classList.remove(
+        "active",
+        "done",
+        "pending"
+    );
+
+    if (mode) {
+
+        element.classList.add(
+            mode
+        );
+
+    }
+
+    element
+        .querySelector(
+            ".stage-status"
+        )
+        .innerText =
+            status;
+
+}
+
+
+function resetPipeline() {
+
+    [
+        "stageVoice",
+        "stageAudio",
+        "stageSTT",
+        "stageSemantic",
+        "stageAgents",
+        "stageDone"
+    ].forEach(
+        function(id) {
+
+            setStage(
+                id,
+                "",
+                "Waiting"
+            );
+
+        }
+    );
+
+
+    document.getElementById(
+        "pipelineMessage"
+    ).innerText =
+        "Waiting for voice input";
+
+}
+
+
+function setAgent(
+    cardId,
+    textId,
+    status
+) {
+
+    const card =
+        document.getElementById(
+            cardId
+        );
+
+    const text =
+        document.getElementById(
+            textId
+        );
+
+    const normalized =
+        String(
+            status || ""
+        ).toUpperCase();
+
+
+    text.innerText =
+        status ||
+        "Not available";
+
+
+    card.classList.remove(
+        "done",
+        "wait",
+        "run"
+    );
+
+
+    if (
+        normalized.includes(
+            "READY"
+        )
+        ||
+        normalized.includes(
+            "COMPLETE"
+        )
+        ||
+        normalized.includes(
+            "FEATURE"
+        )
+    ) {
+
+        card.classList.add(
+            "done"
+        );
+
+    }
+
+    else if (
+        normalized.includes(
+            "WAIT"
+        )
+        ||
+        normalized.includes(
+            "PENDING"
+        )
+        ||
+        normalized.includes(
+            "CALIBRATION"
+        )
+        ||
+        normalized.includes(
+            "NOT_AVAILABLE"
+        )
+    ) {
+
+        card.classList.add(
+            "wait"
+        );
+
+    }
+
+    else {
+
+        card.classList.add(
+            "run"
+        );
+
+    }
+
+}
+
+
+function processingAnimation() {
+
+    const stages = [
+        "stageAudio",
+        "stageSTT",
+        "stageSemantic",
+        "stageAgents"
+    ];
+
+
+    const messages = [
+
+        "Extracting duration and pause evidence",
+
+        "Parakeet is converting speech to text",
+
+        "MiniLM is creating semantic evidence",
+
+        "AEGIE agents are processing the response"
+
+    ];
+
+
+    let index = 0;
+
+
+    setStage(
+        "stageVoice",
+        "done",
+        "Captured"
+    );
+
+
+    setStage(
+        stages[0],
+        "active",
+        "Processing"
+    );
+
+
+    document.getElementById(
+        "pipelineMessage"
+    ).innerText =
+        messages[0];
+
+
+    return setInterval(
+        function() {
+
+            if (
+                index <
+                stages.length - 1
+            ) {
+
+                setStage(
+                    stages[index],
+                    "done",
+                    "Complete"
+                );
+
+                index++;
+
+                setStage(
+                    stages[index],
+                    "active",
+                    "Processing"
+                );
+
+                document.getElementById(
+                    "pipelineMessage"
+                ).innerText =
+                    messages[index];
+
+            }
+
+        },
+        1700
+    );
+
+}
+
+
+async function startRecording() {
+
+    try {
+
+        resetPipeline();
+
+
+        document.getElementById(
+            "result"
+        ).style.display =
+            "none";
+
+
+        audioBlob = null;
+
+        audioChunks = [];
+
+        saved = false;
+
+
+        activeStream =
+            await navigator
+                .mediaDevices
+                .getUserMedia({
                     audio: true
                 });
 
 
-            let options = {};
+        let options = {};
 
 
-            /*
-            Chrome normally supports WebM/Opus.
-            Check support before explicitly requesting it.
-            */
-
-            if (
-                MediaRecorder.isTypeSupported(
+        if (
+            MediaRecorder
+                .isTypeSupported(
                     "audio/webm;codecs=opus"
                 )
-            ) {
+        ) {
 
-                options = {
-                    mimeType: "audio/webm;codecs=opus"
-                };
+            options = {
+                mimeType:
+                    "audio/webm;codecs=opus"
+            };
 
-            }
+        }
 
 
-            mediaRecorder =
-                new MediaRecorder(
-                    activeStream,
-                    options
+        mediaRecorder =
+            new MediaRecorder(
+                activeStream,
+                options
+            );
+
+
+        mediaRecorder
+            .ondataavailable =
+            function(event) {
+
+                if (
+                    event.data &&
+                    event.data.size > 0
+                ) {
+
+                    audioChunks.push(
+                        event.data
+                    );
+
+                }
+
+            };
+
+
+        mediaRecorder.onstop =
+            function() {
+
+                audioBlob =
+                    new Blob(
+                        audioChunks,
+                        {
+                            type:
+                                mediaRecorder.mimeType
+                                ||
+                                "audio/webm"
+                        }
+                    );
+
+
+                const player =
+                    document.getElementById(
+                        "audioPlayer"
+                    );
+
+
+                player.src =
+                    URL.createObjectURL(
+                        audioBlob
+                    );
+
+
+                player.style.display =
+                    "block";
+
+
+                document.getElementById(
+                    "saveBtn"
+                ).disabled =
+                    false;
+
+
+                document.getElementById(
+                    "status"
+                ).innerText =
+                    "Recording complete. Review your audio, then click Analyze & Save.";
+
+
+                document.getElementById(
+                    "wave"
+                ).classList.remove(
+                    "recording"
                 );
 
 
-            mediaRecorder.ondataavailable =
-                function(event) {
-
-                    if (event.data.size > 0) {
-
-                        audioChunks.push(
-                            event.data
-                        );
-
-                    }
-
-                };
+                setStage(
+                    "stageVoice",
+                    "done",
+                    "Captured"
+                );
 
 
-            mediaRecorder.onstop =
-                function() {
-
-                    const mimeType =
-                        mediaRecorder.mimeType ||
-                        "audio/webm";
+                document.getElementById(
+                    "pipelineMessage"
+                ).innerText =
+                    "Voice captured — ready for analysis";
 
 
-                    audioBlob =
-                        new Blob(
-                            audioChunks,
-                            {
-                                type: mimeType
+                stopTimer();
+
+
+                if (activeStream) {
+
+                    activeStream
+                        .getTracks()
+                        .forEach(
+                            function(track) {
+
+                                track.stop();
+
                             }
                         );
 
+                }
 
-                    const audioURL =
-                        URL.createObjectURL(
-                            audioBlob
-                        );
+            };
 
 
-                    const player =
-                        document.getElementById(
-                            "audioPlayer"
-                        );
+        mediaRecorder.start();
 
 
-                    player.src = audioURL;
-
-                    player.style.display =
-                        "block";
+        startTimer();
 
 
-                    document.getElementById(
-                        "saveBtn"
-                    ).disabled = false;
+        document.getElementById(
+            "wave"
+        ).classList.add(
+            "recording"
+        );
 
 
-                    document.getElementById(
-                        "status"
-                    ).innerText =
-                        "Recording stopped. Play the audio and check your response.";
+        setStage(
+            "stageVoice",
+            "active",
+            "Recording"
+        );
 
 
-                    if (activeStream) {
-
-                        activeStream
-                            .getTracks()
-                            .forEach(
-                                track => track.stop()
-                            );
-
-                    }
-
-                };
+        document.getElementById(
+            "pipelineMessage"
+        ).innerText =
+            "Capturing microphone audio";
 
 
-            mediaRecorder.start();
-
-
-            document.getElementById(
-                "status"
-            ).innerText =
-                "Recording... Speak your answer.";
-
-
-            document.getElementById(
-                "startBtn"
-            ).disabled = true;
-
-
-            document.getElementById(
-                "stopBtn"
-            ).disabled = false;
-
-
-            document.getElementById(
-                "saveBtn"
-            ).disabled = true;
-
-        }
-
-        catch (error) {
-
-            document.getElementById(
-                "status"
-            ).innerText =
-                "Microphone error: " +
-                error.message;
-
-        }
-
-    }
-
-
-
-    function stopRecording() {
-
-        if (
-            mediaRecorder &&
-            mediaRecorder.state === "recording"
-        ) {
-
-            mediaRecorder.stop();
-
-
-            document.getElementById(
-                "startBtn"
-            ).disabled = false;
-
-
-            document.getElementById(
-                "stopBtn"
-            ).disabled = true;
-
-        }
-
-    }
-
-
-
-    async function saveRecording() {
-
-        if (!audioBlob) {
-
-            alert(
-                "Please record your answer first."
-            );
-
-            return;
-
-        }
-
-
-        if (saved) {
-
-            return;
-
-        }
-
-
-        saved = true;
-
-
-        const saveButton =
-            document.getElementById(
-                "saveBtn"
-            );
-
-
-        saveButton.disabled = true;
+        document.getElementById(
+            "status"
+        ).innerText =
+            "🎤 Recording... Speak your answer.";
 
 
         document.getElementById(
             "startBtn"
-        ).disabled = true;
+        ).disabled =
+            true;
 
 
         document.getElementById(
-            "saveStatus"
-        ).innerText =
-            "Saving voice response...";
+            "stopBtn"
+        ).disabled =
+            false;
 
 
-        const formData =
-            new FormData();
+        document.getElementById(
+            "saveBtn"
+        ).disabled =
+            true;
+
+    }
+
+    catch (error) {
+
+        stopTimer();
 
 
-        formData.append(
-            "audio",
-            audioBlob,
-            "response.webm"
+        document.getElementById(
+            "wave"
+        ).classList.remove(
+            "recording"
         );
 
 
-        try {
+        document.getElementById(
+            "status"
+        ).innerText =
+            "Microphone error: "
+            +
+            error.message;
 
-            const response =
-                await fetch(
-                    "/save_audio",
-                    {
-                        method: "POST",
-                        body: formData
-                    }
-                );
+    }
 
-
-            const result =
-                await response.json();
+}
 
 
-            if (!response.ok) {
+function stopRecording() {
 
-                throw new Error(
-                    result.message ||
-                    "Unable to save recording."
-                );
+    if (
+        mediaRecorder &&
+        mediaRecorder.state ===
+        "recording"
+    ) {
 
-            }
-
-
-            document.getElementById(
-                "saveStatus"
-            ).innerText =
-                result.message +
-                " Loading next question...";
+        mediaRecorder.stop();
 
 
-            /*
-            app.py returns next_url.
-            After one second we move to the next question.
-            */
+        document.getElementById(
+            "startBtn"
+        ).disabled =
+            false;
 
-            setTimeout(
-                function() {
 
-                    window.location.href =
-                        result.next_url;
+        document.getElementById(
+            "stopBtn"
+        ).disabled =
+            true;
 
-                },
-                1000
+    }
+
+}
+
+
+async function saveRecording() {
+
+    if (!audioBlob) {
+
+        alert(
+            "Please record your answer first."
+        );
+
+        return;
+
+    }
+
+
+    if (saved) {
+
+        return;
+
+    }
+
+
+    saved = true;
+
+
+    const saveBtn =
+        document.getElementById(
+            "saveBtn"
+        );
+
+
+    saveBtn.disabled =
+        true;
+
+
+    document.getElementById(
+        "startBtn"
+    ).disabled =
+        true;
+
+
+    document.getElementById(
+        "status"
+    ).innerText =
+        "Analyzing response... Please wait.";
+
+
+    setAgent(
+        "agentEvaluation",
+        "evaluationStatus",
+        "RUNNING"
+    );
+
+
+    const interval =
+        processingAnimation();
+
+
+    const formData =
+        new FormData();
+
+
+    formData.append(
+        "audio",
+        audioBlob,
+        "response.webm"
+    );
+
+
+    try {
+
+        const response =
+            await fetch(
+                "/save_audio",
+                {
+                    method: "POST",
+                    body: formData
+                }
+            );
+
+
+        const result =
+            await response.json();
+
+
+        clearInterval(
+            interval
+        );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                result.message
+                ||
+                "Unable to save recording."
             );
 
         }
 
-        catch (error) {
 
-            saved = false;
-
-            saveButton.disabled = false;
-
-            document.getElementById(
-                "startBtn"
-            ).disabled = false;
+        setStage(
+            "stageVoice",
+            "done",
+            "Captured"
+        );
 
 
-            document.getElementById(
-                "saveStatus"
-            ).innerText =
-                "Error: " +
-                error.message;
+        setStage(
+            "stageAudio",
+            "done",
+            "Complete"
+        );
 
-        }
+
+        setStage(
+            "stageSTT",
+            result.stt_status
+                ? "done"
+                : "pending",
+            result.stt_status
+                || "Pending"
+        );
+
+
+        setStage(
+            "stageSemantic",
+            result.evaluation_status
+                ? "done"
+                : "pending",
+            result.evaluation_status
+                || "Pending"
+        );
+
+
+        setStage(
+            "stageAgents",
+            "done",
+            "Processed"
+        );
+
+
+        setStage(
+            "stageDone",
+            "done",
+            "Ready"
+        );
+
+
+        document.getElementById(
+            "pipelineMessage"
+        ).innerText =
+            "Response evidence saved successfully";
+
+
+        setAgent(
+            "agentEvaluation",
+            "evaluationStatus",
+            result.evaluation_status
+            ||
+            "NOT_AVAILABLE"
+        );
+
+
+        setAgent(
+            "agentAdaptive",
+            "adaptiveStatus",
+            result.adaptive_status
+            ||
+            "CALIBRATION-GATED"
+        );
+
+
+        setAgent(
+            "agentFeedback",
+            "feedbackStatus",
+            result.feedback_status
+            ||
+            "CALIBRATION-GATED"
+        );
+
+
+        document.getElementById(
+            "durationValue"
+        ).innerText =
+            (
+                result.duration_sec !== null
+                &&
+                result.duration_sec !== undefined
+                &&
+                result.duration_sec !== ""
+            )
+            ?
+            result.duration_sec + " sec"
+            :
+            "—";
+
+
+        document.getElementById(
+            "pauseValue"
+        ).innerText =
+            (
+                result.pause_count !== null
+                &&
+                result.pause_count !== undefined
+                &&
+                result.pause_count !== ""
+            )
+            ?
+            result.pause_count
+            :
+            "—";
+
+
+        document.getElementById(
+            "qualityValue"
+        ).innerText =
+            result.quality_status
+            ||
+            "—";
+
+
+        document.getElementById(
+            "result"
+        ).style.display =
+            "block";
+
+
+        document.getElementById(
+            "status"
+        ).innerText =
+            result.message
+            +
+            " Evidence ready. Loading next question...";
+
+
+        setTimeout(
+            function() {
+
+                window.location.href =
+                    result.next_url;
+
+            },
+            2800
+        );
 
     }
 
+    catch (error) {
+
+        clearInterval(
+            interval
+        );
+
+
+        saved = false;
+
+
+        saveBtn.disabled =
+            false;
+
+
+        document.getElementById(
+            "startBtn"
+        ).disabled =
+            false;
+
+
+        setAgent(
+            "agentEvaluation",
+            "evaluationStatus",
+            "ERROR"
+        );
+
+
+        document.getElementById(
+            "pipelineMessage"
+        ).innerText =
+            "Processing stopped";
+
+
+        document.getElementById(
+            "status"
+        ).innerText =
+            "Error: "
+            +
+            error.message;
+
+    }
+
+}
+
 </script>
 
-
 </body>
-
 </html>
