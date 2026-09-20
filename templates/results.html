@@ -4,16 +4,9 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
-<title>
-    AEGIE Research Prototype Dashboard
-</title>
-
+<title>AEGIE Research Prototype Dashboard</title>
 
 <style>
 
@@ -24,1113 +17,555 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-
-    background:
-        linear-gradient(
-            135deg,
-            #eef4ff,
-            #f8fafc,
-            #eef7f4
-        );
-
+    background: linear-gradient(135deg,#eef4ff,#f8fafc,#eef7f4);
     color: #172033;
 }
 
-
-/* HEADER */
-
 .topbar {
-
-    background:
-        linear-gradient(
-            135deg,
-            #0f172a,
-            #10233f,
-            #16345d
-        );
-
+    background: linear-gradient(135deg,#0f172a,#10233f,#16345d);
     color: white;
-
     padding: 26px 32px;
 }
 
-
 .topbar-inner {
-
     max-width: 1240px;
-
     margin: auto;
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     gap: 20px;
-
     flex-wrap: wrap;
 }
 
-
 .topbar h1 {
-
     margin: 0;
-
     font-size: 30px;
 }
 
-
 .topbar p {
-
     margin: 7px 0 0;
-
     opacity: 0.82;
 }
 
-
 .prototype-badge {
-
     background: rgba(255,255,255,0.12);
-
-    border:
-        1px solid
-        rgba(255,255,255,0.22);
-
+    border: 1px solid rgba(255,255,255,0.22);
     padding: 9px 14px;
-
     border-radius: 999px;
-
     font-size: 11px;
-
     font-weight: bold;
 }
 
-
-/* MAIN */
-
 .container {
-
     max-width: 1240px;
-
     margin: 24px auto 50px;
-
     padding: 0 18px;
 }
 
-
 .card {
-
     background: white;
-
     border-radius: 16px;
-
     padding: 20px;
-
-    box-shadow:
-        0
-        4px
-        18px
-        rgba(16,35,63,0.08);
+    box-shadow: 0 4px 18px rgba(16,35,63,0.08);
 }
 
-
 .section {
-
     margin-bottom: 20px;
 }
 
-
 h2 {
-
     margin-top: 0;
-
     color: #10233f;
 }
 
-
-/* BANNER */
-
 .banner {
-
     background: white;
-
     border-radius: 14px;
-
     padding: 18px 20px;
-
     margin-bottom: 18px;
-
-    box-shadow:
-        0
-        3px
-        16px
-        rgba(16,35,63,0.08);
-
-    border-left:
-        5px solid #2d6cdf;
-
+    box-shadow: 0 3px 16px rgba(16,35,63,0.08);
+    border-left: 5px solid #2d6cdf;
     line-height: 1.6;
 }
 
-
-.banner strong {
-
-    color: #10233f;
-}
-
-
 .integrity {
-
     border-left-color: #1d8a52;
-
     background: #f4fff8;
 }
 
-
-/* QUICK STATUS */
-
 .quick-status {
-
     display: grid;
-
-    grid-template-columns:
-        repeat(4,minmax(0,1fr));
-
+    grid-template-columns: repeat(4,minmax(0,1fr));
     gap: 12px;
-
     margin-bottom: 20px;
 }
 
-
 .quick-card {
-
     border-radius: 13px;
-
     padding: 15px;
-
-    box-shadow:
-        0
-        3px
-        14px
-        rgba(15,23,42,0.06);
+    box-shadow: 0 3px 14px rgba(15,23,42,0.06);
 }
-
 
 .quick-title {
-
     font-size: 10px;
-
     color: #64748b;
-
     text-transform: uppercase;
-
     margin-bottom: 7px;
-
     font-weight: bold;
 }
 
-
 .quick-value {
-
     font-size: 17px;
-
     font-weight: bold;
-
     overflow-wrap: anywhere;
 }
 
-
 .quick-note {
-
     font-size: 10px;
-
     color: #64748b;
-
     margin-top: 6px;
-
     line-height: 1.4;
 }
 
-
 .quick-response {
-
     background: #ffffff;
-
     border: 1px solid #dbeafe;
 }
 
-
 .quick-response .quick-value {
-
     color: #1d4ed8;
-
     font-size: 22px;
 }
 
-
 .quick-stt {
-
     background: #f0fdf4;
-
     border: 1px solid #bbf7d0;
 }
 
-
 .quick-stt .quick-value {
-
     color: #15803d;
 }
 
-
 .quick-evaluation {
-
     background: #eff6ff;
-
     border: 1px solid #bfdbfe;
 }
 
-
 .quick-evaluation .quick-value {
-
     color: #1d4ed8;
 }
 
-
 .quick-gated {
-
     background: #fffbeb;
-
     border: 1px solid #fde68a;
 }
 
-
 .quick-gated .quick-value {
-
     color: #a16207;
 }
 
-
-/* METRICS */
-
 .grid {
-
     display: grid;
-
-    grid-template-columns:
-        repeat(4,minmax(0,1fr));
-
+    grid-template-columns: repeat(4,minmax(0,1fr));
     gap: 14px;
-
     margin-bottom: 20px;
 }
 
-
 .metric-card {
-
     position: relative;
-
     overflow: hidden;
 }
 
-
-.metric-card::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 80px;
-
-    height: 80px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(45,108,223,0.07);
-
-    right: -20px;
-
-    top: -20px;
-}
-
-
-.metric-icon {
-
-    font-size: 23px;
-
-    margin-bottom: 10px;
-}
-
-
 .metric-title {
-
     color: #657089;
-
     font-size: 12px;
-
     text-transform: uppercase;
-
-    letter-spacing: 0.6px;
-
     margin-bottom: 7px;
 }
 
-
 .metric-value {
-
     font-size: 29px;
-
     font-weight: bold;
-
     color: #10233f;
 }
 
-
 .metric-note {
-
     margin-top: 6px;
-
     font-size: 11px;
-
     color: #7a8497;
 }
 
-
-/* VISUAL BARS */
+.metric-icon {
+    font-size: 23px;
+    margin-bottom: 10px;
+}
 
 .visual-grid {
-
     display: grid;
-
-    grid-template-columns:
-        repeat(2,minmax(0,1fr));
-
+    grid-template-columns: repeat(2,minmax(0,1fr));
     gap: 18px;
 }
 
-
 .visual-box {
-
-    border:
-        1px solid
-        #e2e8f0;
-
+    border: 1px solid #e2e8f0;
     border-radius: 13px;
-
     padding: 16px;
-
     background: #fbfcfe;
 }
 
-
 .visual-box h3 {
-
     margin: 0 0 16px;
-
     font-size: 15px;
-
-    color: #10233f;
 }
 
-
 .chart-row {
-
     margin-bottom: 15px;
 }
 
-
 .chart-head {
-
     display: flex;
-
     justify-content: space-between;
-
-    gap: 10px;
-
     font-size: 12px;
-
     margin-bottom: 6px;
 }
 
-
-.chart-label {
-
-    color: #59657a;
-}
-
-
-.chart-value {
-
-    color: #10233f;
-
-    font-weight: bold;
-}
-
-
 .bar-track {
-
     width: 100%;
-
     height: 13px;
-
     border-radius: 999px;
-
     background: #e9eef5;
-
     overflow: hidden;
 }
 
-
 .bar-fill {
-
     height: 100%;
-
     border-radius: 999px;
-
     width: 0;
-
-    transition:
-        width 0.8s ease;
+    transition: width 0.8s ease;
 }
-
 
 .bar-blue {
-
-    background:
-        linear-gradient(
-            90deg,
-            #2563eb,
-            #38bdf8
-        );
+    background: linear-gradient(90deg,#2563eb,#38bdf8);
 }
-
 
 .bar-green {
-
-    background:
-        linear-gradient(
-            90deg,
-            #16a34a,
-            #4ade80
-        );
+    background: linear-gradient(90deg,#16a34a,#4ade80);
 }
-
 
 .bar-orange {
-
-    background:
-        linear-gradient(
-            90deg,
-            #ea580c,
-            #fbbf24
-        );
+    background: linear-gradient(90deg,#ea580c,#fbbf24);
 }
-
 
 .bar-purple {
-
-    background:
-        linear-gradient(
-            90deg,
-            #7c3aed,
-            #c084fc
-        );
+    background: linear-gradient(90deg,#7c3aed,#c084fc);
 }
 
-
-/* FEEDBACK */
-
 .feedback-card {
-
-    background:
-        linear-gradient(
-            135deg,
-            #f8fbff,
-            #f0fdf4
-        );
-
-    border:
-        1px solid
-        #dbeafe;
-
+    background: linear-gradient(135deg,#f8fbff,#f0fdf4);
+    border: 1px solid #dbeafe;
     border-radius: 16px;
-
     padding: 20px;
-
     margin-bottom: 20px;
 }
 
-
 .feedback-header {
-
     display: flex;
-
-    align-items: center;
-
     justify-content: space-between;
-
     gap: 12px;
-
     flex-wrap: wrap;
-
     margin-bottom: 16px;
 }
 
-
 .feedback-header h2 {
-
     margin: 0;
 }
 
-
 .feedback-badge {
-
     padding: 6px 11px;
-
     border-radius: 999px;
-
     background: #e0f2fe;
-
     color: #0369a1;
-
     font-size: 10px;
-
     font-weight: bold;
 }
 
-
 .feedback-grid {
-
     display: grid;
-
-    grid-template-columns:
-        repeat(2,minmax(0,1fr));
-
+    grid-template-columns: repeat(2,minmax(0,1fr));
     gap: 12px;
 }
 
-
 .feedback-box {
-
     background: white;
-
-    border:
-        1px solid
-        #e2e8f0;
-
+    border: 1px solid #e2e8f0;
     border-radius: 12px;
-
     padding: 15px;
 }
 
-
 .feedback-box h3 {
-
     margin: 0 0 8px;
-
     font-size: 14px;
-
-    color: #10233f;
 }
 
-
 .feedback-box p {
-
     margin: 0;
-
     font-size: 12px;
-
     line-height: 1.6;
-
     color: #59657a;
 }
 
-
 .feedback-warning {
-
     margin-top: 14px;
-
     padding: 12px 14px;
-
-    border-left:
-        4px solid
-        #f59e0b;
-
+    border-left: 4px solid #f59e0b;
     background: #fffbeb;
-
     border-radius: 8px;
-
     color: #92400e;
-
     font-size: 11px;
-
     line-height: 1.55;
 }
 
-
-/* PIPELINE */
-
 .status-row {
-
     display: grid;
-
-    grid-template-columns:
-        repeat(4,minmax(0,1fr));
-
+    grid-template-columns: repeat(4,minmax(0,1fr));
     gap: 12px;
 }
 
-
 .status-box {
-
     background: #f7f9fc;
-
-    border:
-        1px solid
-        #e2e7ef;
-
+    border: 1px solid #e2e7ef;
     border-radius: 11px;
-
     padding: 14px;
-
-    min-width: 0;
 }
 
-
 .status-icon {
-
     font-size: 22px;
-
     margin-bottom: 8px;
 }
 
-
-.status-box b {
-
-    display: block;
-
-    margin-bottom: 6px;
-
-    color: #10233f;
-}
-
-
 .status-text {
-
     color: #59657a;
-
     font-size: 11px;
-
     line-height: 1.45;
-
     overflow-wrap: anywhere;
 }
 
-
-/* SCOPE */
-
 .scope-grid {
-
     display: grid;
-
-    grid-template-columns:
-        repeat(2,minmax(0,1fr));
-
+    grid-template-columns: repeat(2,minmax(0,1fr));
     gap: 12px;
 }
 
-
 .scope-box {
-
-    border:
-        1px solid
-        #e1e7f0;
-
+    border: 1px solid #e1e7f0;
     border-radius: 11px;
-
     padding: 15px;
-
     background: #fbfcfe;
 }
 
-
-.scope-box strong {
-
-    display: block;
-
-    margin-bottom: 7px;
-}
-
-
 .scope-box p {
-
-    margin: 0;
-
+    margin: 7px 0 0;
     color: #59657a;
-
     line-height: 1.55;
-
     font-size: 12px;
 }
 
-
 .ready {
-
     color: #18864b;
 }
 
-
 .pending {
-
     color: #a06a00;
 }
 
-
-/* QUESTION CARDS */
-
 .question-card {
-
     margin-top: 16px;
-
-    border:
-        1px solid
-        #e1e7f0;
-
+    border: 1px solid #e1e7f0;
     border-radius: 14px;
-
     overflow: hidden;
 }
 
-
 .question-header {
-
-    background:
-        linear-gradient(
-            90deg,
-            #f7f9fc,
-            #eef5ff
-        );
-
+    background: linear-gradient(90deg,#f7f9fc,#eef5ff);
     padding: 14px 16px;
-
     display: flex;
-
     justify-content: space-between;
-
     gap: 12px;
-
-    flex-wrap: wrap;
 }
 
-
 .difficulty {
-
     background: #fff7ed;
-
     color: #c2410c;
-
     padding: 5px 10px;
-
     border-radius: 999px;
-
     font-size: 11px;
-
     font-weight: bold;
 }
 
-
 .question-body {
-
     padding: 17px;
 }
 
-
 .question-text {
-
     font-weight: bold;
-
     margin-bottom: 11px;
-
-    color: #172033;
-
     line-height: 1.5;
 }
 
-
 .transcript-title {
-
     font-size: 11px;
-
     font-weight: bold;
-
     color: #64748b;
-
     text-transform: uppercase;
-
     margin-bottom: 6px;
 }
 
-
 .transcript {
-
     background: #fbfcfe;
-
-    border:
-        1px solid
-        #e6ebf2;
-
+    border: 1px solid #e6ebf2;
     border-radius: 10px;
-
     padding: 13px;
-
     line-height: 1.6;
-
     margin-bottom: 14px;
 }
 
-
-/* MINI METRICS */
-
 .mini-grid {
-
     display: grid;
-
-    grid-template-columns:
-        repeat(5,minmax(0,1fr));
-
+    grid-template-columns: repeat(5,minmax(0,1fr));
     gap: 10px;
 }
 
-
 .mini-box {
-
     background: #f7f9fc;
-
     border-radius: 9px;
-
     padding: 11px;
 }
 
-
 .mini-box span {
-
     display: block;
-
     color: #738097;
-
     font-size: 10px;
-
     margin-bottom: 5px;
 }
 
-
-.mini-box strong {
-
-    font-size: 15px;
-
-    color: #10233f;
-}
-
-
-/* SEMANTIC */
-
 .semantic-grid {
-
     display: grid;
-
-    grid-template-columns:
-        repeat(2,minmax(0,1fr));
-
+    grid-template-columns: repeat(2,minmax(0,1fr));
     gap: 12px;
-
     margin-top: 14px;
 }
 
-
 .semantic-box {
-
     background: #eef5ff;
-
     border-radius: 10px;
-
     padding: 14px;
 }
 
-
 .semantic-box span {
-
     display: block;
-
     font-size: 11px;
-
     color: #5f6d84;
-
     margin-bottom: 6px;
 }
 
-
 .semantic-box strong {
-
     font-size: 21px;
-
     color: #215eb9;
 }
 
-
-.semantic-bar {
-
-    margin-top: 10px;
-}
-
-
-/* PER QUESTION FEEDBACK */
-
 .question-feedback {
-
-    margin-top: 14px;
-
-    background: #f8fafc;
-
-    border:
-        1px dashed
-        #cbd5e1;
-
-    border-radius: 10px;
-
-    padding: 12px 14px;
+    margin-top: 15px;
+    background: linear-gradient(135deg,#f8fafc,#f0f9ff);
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 15px;
 }
-
 
 .question-feedback-title {
-
-    font-size: 11px;
-
+    font-size: 12px;
     font-weight: bold;
-
-    color: #475569;
-
+    color: #0f172a;
     text-transform: uppercase;
-
-    margin-bottom: 6px;
+    margin-bottom: 10px;
 }
 
-
-.question-feedback p {
-
-    margin: 0;
-
-    color: #64748b;
-
-    font-size: 11px;
-
-    line-height: 1.55;
+.feedback-line {
+    margin: 7px 0;
+    color: #475569;
+    font-size: 12px;
+    line-height: 1.6;
 }
 
+.feedback-highlight {
+    background: #ffffff;
+    border-left: 4px solid #2563eb;
+    padding: 10px 12px;
+    margin-top: 10px;
+    border-radius: 7px;
+    font-size: 12px;
+    color: #334155;
+    line-height: 1.6;
+}
 
-/* INTERPRETATION */
+.feedback-safe {
+    margin-top: 10px;
+    color: #92400e;
+    font-size: 10px;
+    line-height: 1.5;
+}
 
 .research-note {
-
     font-size: 13px;
-
     line-height: 1.7;
-
     color: #59657a;
 }
 
-
-/* BUTTONS */
-
 .footer-actions {
-
     display: flex;
-
     gap: 12px;
-
     flex-wrap: wrap;
-
     margin-top: 22px;
 }
 
-
 .btn {
-
     text-decoration: none;
-
     display: inline-block;
-
     border-radius: 10px;
-
     padding: 12px 19px;
-
     font-weight: bold;
-
     border: none;
-
     cursor: pointer;
-
     font-size: 14px;
 }
 
-
 .btn-primary {
-
     background: #2d6cdf;
-
     color: white;
 }
 
+.btn-dark {
+    background: #10233f;
+    color: white;
+}
 
 .btn-secondary {
-
     background: white;
-
-    border:
-        1px solid
-        #cad3e0;
-
+    border: 1px solid #cad3e0;
     color: #24324a;
 }
 
-
-.btn-dark {
-
-    background: #10233f;
-
-    color: white;
-}
-
-
-/* PRINT */
-
 @media print {
-
-    body {
-        background: white;
-    }
 
     .footer-actions {
         display: none;
     }
 
-    .card,
-    .banner,
-    .quick-card,
-    .feedback-card {
-
-        box-shadow: none;
-
-        break-inside: avoid;
-    }
-
-    .question-card {
+    .question-card,
+    .feedback-card,
+    .card {
         break-inside: avoid;
     }
 }
-
-
-/* RESPONSIVE */
 
 @media(max-width:900px) {
 
@@ -1140,18 +575,13 @@ h2 {
     .scope-grid,
     .visual-grid,
     .feedback-grid {
-
-        grid-template-columns:
-            repeat(2,minmax(0,1fr));
+        grid-template-columns: repeat(2,minmax(0,1fr));
     }
 
     .mini-grid {
-
-        grid-template-columns:
-            repeat(2,minmax(0,1fr));
+        grid-template-columns: repeat(2,minmax(0,1fr));
     }
 }
-
 
 @media(max-width:600px) {
 
@@ -1160,15 +590,10 @@ h2 {
     .status-row,
     .scope-grid,
     .visual-grid,
-    .semantic-grid,
+    .feedback-grid,
     .mini-grid,
-    .feedback-grid {
-
+    .semantic-grid {
         grid-template-columns: 1fr;
-    }
-
-    .topbar h1 {
-        font-size: 24px;
     }
 }
 
@@ -1196,11 +621,8 @@ h2 {
 
         </div>
 
-
         <div class="prototype-badge">
-
             PROOF-OF-CONCEPT · MEASURED EVIDENCE
-
         </div>
 
     </div>
@@ -1210,8 +632,6 @@ h2 {
 
 <div class="container">
 
-
-<!-- SESSION -->
 
 <div class="banner">
 
@@ -1231,14 +651,10 @@ h2 {
         Responses analyzed:
     </strong>
 
-    {{ response_count }}
-    /
-    {{ expected_count }}
+    {{ response_count }} / {{ expected_count }}
 
 </div>
 
-
-<!-- INTEGRITY -->
 
 <div class="banner integrity">
 
@@ -1249,19 +665,19 @@ h2 {
     This dashboard reports measurable evidence from
     the current recorded interview.
 
-    MiniLM values represent semantic similarity evidence
-    and are not validated interview scores.
+    MiniLM values are semantic similarity evidence,
+    not validated interview scores.
 
     No participant-study result,
     hiring decision,
+    pass/fail result,
     or calibrated 1–5 score is claimed.
 
 </div>
 
 
-<!-- QUICK STATUS -->
-
 <div class="quick-status">
+
 
     <div class="quick-card quick-response">
 
@@ -1325,40 +741,32 @@ h2 {
         </div>
 
         <div class="quick-note">
-            Adaptive and final scoring await validation
+            Validated score-based decisions await calibration
         </div>
 
     </div>
 
+
 </div>
 
 
-<!-- SUMMARY -->
-
 <div class="grid">
+
 
     <div class="card metric-card">
 
-        <div class="metric-icon">
-            ⚡
-        </div>
+        <div class="metric-icon">⚡</div>
 
         <div class="metric-title">
             Average WPM
         </div>
 
         <div class="metric-value">
-
-            {{
-                avg_wpm
-                if avg_wpm is not none
-                else "—"
-            }}
-
+            {{ avg_wpm if avg_wpm is not none else "—" }}
         </div>
 
         <div class="metric-note">
-            Average speaking rate
+            Current interview speaking-rate evidence
         </div>
 
     </div>
@@ -1366,20 +774,18 @@ h2 {
 
     <div class="card metric-card">
 
-        <div class="metric-icon">
-            💬
-        </div>
+        <div class="metric-icon">💬</div>
 
         <div class="metric-title">
             Total Fillers
         </div>
 
         <div class="metric-value">
-            {{ total_fillers }}
+            {{ total_fillers | int }}
         </div>
 
         <div class="metric-note">
-            Objective speech feature
+            Detected filler-word evidence
         </div>
 
     </div>
@@ -1387,20 +793,18 @@ h2 {
 
     <div class="card metric-card">
 
-        <div class="metric-icon">
-            ⏸
-        </div>
+        <div class="metric-icon">⏸</div>
 
         <div class="metric-title">
             Total Pauses
         </div>
 
         <div class="metric-value">
-            {{ total_pauses }}
+            {{ total_pauses | int }}
         </div>
 
         <div class="metric-note">
-            Silence-based pauses
+            Silence-based pause evidence
         </div>
 
     </div>
@@ -1408,9 +812,7 @@ h2 {
 
     <div class="card metric-card">
 
-        <div class="metric-icon">
-            🧠
-        </div>
+        <div class="metric-icon">🧠</div>
 
         <div class="metric-title">
             Mean Semantic Evidence
@@ -1436,17 +838,16 @@ h2 {
 
     </div>
 
+
 </div>
 
-
-<!-- EVIDENCE BASED FEEDBACK -->
 
 <div class="feedback-card">
 
     <div class="feedback-header">
 
         <h2>
-            Evidence-Based Feedback
+            Overall Evidence-Based Feedback
         </h2>
 
         <span class="feedback-badge">
@@ -1467,36 +868,28 @@ h2 {
 
             <p>
 
-                The current interview contains
-                {{ response_count }}
-                analyzed voice responses.
+                AEGIE analyzed
+                <strong>{{ response_count }}</strong>
+                recorded responses.
 
-                The measured average speaking rate is
+                Average speaking rate:
 
                 <strong>
-                    {{
-                        avg_wpm
-                        if avg_wpm is not none
-                        else "unavailable"
-                    }}
+                    {{ avg_wpm if avg_wpm is not none else "unavailable" }}
                     WPM
                 </strong>.
 
-                The system detected
+                Total detected fillers:
 
                 <strong>
-                    {{ total_fillers }}
-                    fillers
-                </strong>
+                    {{ total_fillers | int }}
+                </strong>.
 
-                and
+                Total detected pauses:
 
                 <strong>
-                    {{ total_pauses }}
-                    pauses
-                </strong>
-
-                across the current development interview.
+                    {{ total_pauses | int }}
+                </strong>.
 
             </p>
 
@@ -1511,8 +904,7 @@ h2 {
 
             <p>
 
-                The average whole-answer MiniLM
-                semantic similarity is
+                Current average whole-answer MiniLM evidence:
 
                 <strong>
 
@@ -1528,12 +920,29 @@ h2 {
 
                 </strong>.
 
-                This measures semantic overlap
-                between the transcript and the
+                This represents semantic similarity
+                between transcribed answers and
                 researcher-created reference knowledge.
 
-                It is evidence,
-                not a validated answer-quality score.
+            </p>
+
+        </div>
+
+
+        <div class="feedback-box">
+
+            <h3>
+                📝 Transcription Evidence
+            </h3>
+
+            <p>
+
+                Parakeet converted the microphone
+                recordings into transcripts.
+
+                These transcripts remain visible because
+                speech-to-text errors can influence
+                semantic evidence.
 
             </p>
 
@@ -1543,45 +952,17 @@ h2 {
         <div class="feedback-box">
 
             <h3>
-                📝 Transcript Evidence
+                🤖 Evaluation Status
             </h3>
 
             <p>
 
-                Parakeet STT converted the recorded
-                responses into text so that speech
-                measurements and semantic evidence
-                could be calculated.
+                Speech features and semantic evidence
+                are available.
 
-                Transcription errors may affect
-                downstream MiniLM similarity,
-                so the transcript remains visible
-                for transparent review.
-
-            </p>
-
-        </div>
-
-
-        <div class="feedback-box">
-
-            <h3>
-                🤖 Agent Feedback Status
-            </h3>
-
-            <p>
-
-                The Evaluation Agent has produced
-                measurable evidence.
-
-                Adaptive difficulty and validated
-                score-based feedback remain
-                calibration-gated.
-
-                AEGIE therefore reports the evidence
-                it can support instead of generating
-                an unsupported pass/fail result
-                or 1–5 score.
+                Validated score-based adaptive decisions
+                and final interview grading remain gated
+                until appropriate calibration exists.
 
             </p>
 
@@ -1593,25 +974,18 @@ h2 {
 
     <div class="feedback-warning">
 
-        <strong>
-            Important:
-        </strong>
+        <strong>Important:</strong>
 
-        This section is evidence-based feedback,
-        not validated candidate evaluation.
-
-        It should not be interpreted as
-        pass/fail,
-        hiring suitability,
-        technical competency grading,
-        or a calibrated interview score.
+        This is descriptive evidence-based feedback.
+        It is not a validated candidate score,
+        competency grade,
+        hiring recommendation,
+        or pass/fail result.
 
     </div>
 
 </div>
 
-
-<!-- VISUAL EVIDENCE -->
 
 <div class="card section">
 
@@ -1634,22 +1008,15 @@ h2 {
 
                 <div class="chart-head">
 
-                    <span class="chart-label">
+                    <span>
                         Average WPM
                     </span>
 
-                    <span class="chart-value">
-
-                        {{
-                            avg_wpm
-                            if avg_wpm is not none
-                            else "—"
-                        }}
-
-                    </span>
+                    <strong>
+                        {{ avg_wpm if avg_wpm is not none else "—" }}
+                    </strong>
 
                 </div>
-
 
                 <div class="bar-track">
 
@@ -1667,16 +1034,15 @@ h2 {
 
                 <div class="chart-head">
 
-                    <span class="chart-label">
-                        Total Fillers
+                    <span>
+                        Fillers
                     </span>
 
-                    <span class="chart-value">
-                        {{ total_fillers }}
-                    </span>
+                    <strong>
+                        {{ total_fillers | int }}
+                    </strong>
 
                 </div>
-
 
                 <div class="bar-track">
 
@@ -1694,16 +1060,15 @@ h2 {
 
                 <div class="chart-head">
 
-                    <span class="chart-label">
-                        Total Pauses
+                    <span>
+                        Pauses
                     </span>
 
-                    <span class="chart-value">
-                        {{ total_pauses }}
-                    </span>
+                    <strong>
+                        {{ total_pauses | int }}
+                    </strong>
 
                 </div>
-
 
                 <div class="bar-track">
 
@@ -1715,6 +1080,7 @@ h2 {
                 </div>
 
             </div>
+
 
         </div>
 
@@ -1730,11 +1096,11 @@ h2 {
 
                 <div class="chart-head">
 
-                    <span class="chart-label">
+                    <span>
                         Mean MiniLM Similarity
                     </span>
 
-                    <span class="chart-value">
+                    <strong>
 
                         {% if avg_semantic_mean is not none %}
 
@@ -1746,7 +1112,7 @@ h2 {
 
                         {% endif %}
 
-                    </span>
+                    </strong>
 
                 </div>
 
@@ -1765,21 +1131,20 @@ h2 {
 
             <p class="research-note">
 
-                These bars visualize measured evidence only.
+                Bar length is visualization only.
 
-                They are not pass/fail thresholds
-                and do not represent candidate suitability.
+                It is not a pass threshold
+                or interview-quality classification.
 
             </p>
 
         </div>
 
+
     </div>
 
 </div>
 
-
-<!-- PIPELINE -->
 
 <div class="card section">
 
@@ -1793,13 +1158,11 @@ h2 {
 
         <div class="status-box">
 
-            <div class="status-icon">
-                🎙
-            </div>
+            <div class="status-icon">🎙</div>
 
-            <b>
+            <strong>
                 Speech-to-Text
-            </b>
+            </strong>
 
             <div class="status-text">
                 {{ stt_status }}
@@ -1810,13 +1173,11 @@ h2 {
 
         <div class="status-box">
 
-            <div class="status-icon">
-                🧠
-            </div>
+            <div class="status-icon">🧠</div>
 
-            <b>
+            <strong>
                 Evaluation Agent
-            </b>
+            </strong>
 
             <div class="status-text">
                 {{ evaluation_status }}
@@ -1827,13 +1188,11 @@ h2 {
 
         <div class="status-box">
 
-            <div class="status-icon">
-                🔄
-            </div>
+            <div class="status-icon">🔄</div>
 
-            <b>
+            <strong>
                 Adaptive Agent
-            </b>
+            </strong>
 
             <div class="status-text">
                 {{ adaptive_status }}
@@ -1844,13 +1203,11 @@ h2 {
 
         <div class="status-box">
 
-            <div class="status-icon">
-                📋
-            </div>
+            <div class="status-icon">📋</div>
 
-            <b>
+            <strong>
                 Feedback Agent
-            </b>
+            </strong>
 
             <div class="status-text">
                 {{ feedback_status }}
@@ -1858,12 +1215,11 @@ h2 {
 
         </div>
 
+
     </div>
 
 </div>
 
-
-<!-- SCOPE -->
 
 <div class="card section">
 
@@ -1885,7 +1241,6 @@ h2 {
 
                 Voice capture,
                 Parakeet STT,
-                transcript storage,
                 speech features,
                 MiniLM semantic evidence,
                 agent workflow,
@@ -1925,10 +1280,10 @@ h2 {
 
             <p>
 
-                No validated 1–5 interview score,
+                No validated 1–5 score,
                 no hiring accuracy,
-                no human-vs-AEGIE agreement,
-                and no participant-study result.
+                no pass/fail result,
+                and no participant-study finding.
 
             </p>
 
@@ -1944,30 +1299,33 @@ h2 {
             <p>
 
                 Human annotation,
+                expert review,
                 calibrated scoring,
-                held-out testing,
-                expert reference review,
-                and validated adaptive difficulty.
+                held-out evaluation,
+                and validated adaptive decisions.
 
             </p>
 
         </div>
+
 
     </div>
 
 </div>
 
 
-<!-- RESPONSES -->
-
 <div class="card section">
 
     <h2>
-        Real Response Evidence
+        Real Response Evidence & Dynamic Feedback
     </h2>
 
 
     {% for response in responses %}
+
+
+    {% set filler_count = response.filler_count | int %}
+    {% set pause_count = response.pause_count | int %}
 
 
     <div class="question-card">
@@ -2048,7 +1406,7 @@ h2 {
                     </span>
 
                     <strong>
-                        {{ response.word_count }}
+                        {{ response.word_count | int }}
                     </strong>
 
                 </div>
@@ -2074,7 +1432,7 @@ h2 {
                     </span>
 
                     <strong>
-                        {{ response.filler_count }}
+                        {{ filler_count }}
                     </strong>
 
                 </div>
@@ -2087,10 +1445,11 @@ h2 {
                     </span>
 
                     <strong>
-                        {{ response.pause_count }}
+                        {{ pause_count }}
                     </strong>
 
                 </div>
+
 
             </div>
 
@@ -2119,20 +1478,16 @@ h2 {
                     </strong>
 
 
-                    <div class="semantic-bar">
+                    <div class="bar-track">
 
-                        <div class="bar-track">
+                        <div
+                            class="bar-fill bar-blue question-whole-bar"
 
-                            <div
-                                class="bar-fill bar-blue question-whole-bar"
-
-                                data-value="{{
-                                    response.whole_mean_similarity
-                                    if response.whole_mean_similarity is not none
-                                    else 0
-                                }}">
-                            </div>
-
+                            data-value="{{
+                                response.whole_mean_similarity
+                                if response.whole_mean_similarity is not none
+                                else 0
+                            }}">
                         </div>
 
                     </div>
@@ -2161,57 +1516,292 @@ h2 {
                     </strong>
 
 
-                    <div class="semantic-bar">
+                    <div class="bar-track">
 
-                        <div class="bar-track">
+                        <div
+                            class="bar-fill bar-green question-sentence-bar"
 
-                            <div
-                                class="bar-fill bar-green question-sentence-bar"
-
-                                data-value="{{
-                                    response.sentence_mean_best_similarity
-                                    if response.sentence_mean_best_similarity is not none
-                                    else 0
-                                }}">
-                            </div>
-
+                            data-value="{{
+                                response.sentence_mean_best_similarity
+                                if response.sentence_mean_best_similarity is not none
+                                else 0
+                            }}">
                         </div>
 
                     </div>
 
                 </div>
 
+
             </div>
 
 
             <div class="question-feedback">
 
+
                 <div class="question-feedback-title">
 
-                    Evidence-Based Response Note
+                    📌 Q{{ response.question_number }}
+                    Evidence-Based Feedback
 
                 </div>
 
 
-                <p>
+                <p class="feedback-line">
 
-                    This response contains measurable
-                    speech and semantic evidence.
+                    This response lasted
 
-                    The transcript,
-                    duration,
-                    word count,
-                    WPM,
-                    filler count,
-                    pause count,
-                    and MiniLM similarities are shown above.
+                    <strong>
+                        {{ response.duration_sec }} seconds
+                    </strong>
+
+                    and contained
+
+                    <strong>
+                        {{ response.word_count | int }} words
+                    </strong>.
+
+                    The measured speaking rate was
+
+                    <strong>
+                        {{ response.wpm }} WPM
+                    </strong>.
+
+                </p>
+
+
+                <p class="feedback-line">
+
+                    The speech feature extractor detected
+
+                    <strong>
+                        {{ filler_count }}
+                        filler{% if filler_count != 1 %}s{% endif %}
+                    </strong>
+
+                    and
+
+                    <strong>
+                        {{ pause_count }}
+                        pause{% if pause_count != 1 %}s{% endif %}
+                    </strong>
+
+                    using the current development
+                    detection rules.
+
+                </p>
+
+
+                <p class="feedback-line">
+
+                    Whole-answer MiniLM evidence:
+
+                    <strong>
+
+                        {% if response.whole_mean_similarity is not none %}
+
+                            {{ response.whole_mean_similarity }}
+
+                        {% else %}
+
+                            unavailable
+
+                        {% endif %}
+
+                    </strong>.
+
+                    Sentence-level MiniLM evidence:
+
+                    <strong>
+
+                        {% if response.sentence_mean_best_similarity is not none %}
+
+                            {{ response.sentence_mean_best_similarity }}
+
+                        {% else %}
+
+                            unavailable
+
+                        {% endif %}
+
+                    </strong>.
+
+                </p>
+
+
+                {% if
+                    response.whole_mean_similarity is not none
+                    and
+                    response.sentence_mean_best_similarity is not none
+                %}
+
+
+                    {% set whole =
+                        response.whole_mean_similarity | float
+                    %}
+
+
+                    {% set sentence =
+                        response.sentence_mean_best_similarity | float
+                    %}
+
+
+                    {% set difference =
+                        sentence - whole
+                    %}
+
+
+                    <div class="feedback-highlight">
+
+
+                        {% if difference > 0.02 %}
+
+                            Sentence-level evidence is
+
+                            <strong>
+                                {{ difference | round(4) }}
+                            </strong>
+
+                            higher than whole-answer evidence.
+
+                            This means one or more
+                            sentence-level parts of the response
+                            produced stronger semantic overlap
+                            with the reference knowledge than
+                            the overall response representation.
+
+
+                        {% elif difference < -0.02 %}
+
+                            Whole-answer evidence is
+
+                            <strong>
+                                {{ (difference * -1) | round(4) }}
+                            </strong>
+
+                            higher than sentence-level evidence.
+
+                            The complete response representation
+                            produced stronger semantic overlap
+                            than the sentence-level aggregation
+                            for this response.
+
+
+                        {% else %}
+
+                            The whole-answer and sentence-level
+                            semantic evidence values are close.
+
+                            Their absolute difference is
+
+                            <strong>
+                                {{ difference | abs | round(4) }}
+                            </strong>.
+
+                        {% endif %}
+
+
+                    </div>
+
+
+                {% endif %}
+
+
+                {% if filler_count == 0 %}
+
+                    <p class="feedback-line">
+
+                        No filler words were detected
+                        in this response by the current
+                        filler-word detector.
+
+                    </p>
+
+
+                {% elif filler_count == 1 %}
+
+                    <p class="feedback-line">
+
+                        The current detector found
+                        <strong>1 filler word</strong>
+                        in this response.
+
+                        This is reported as speech evidence
+                        only and is not converted into a
+                        quality penalty.
+
+                    </p>
+
+
+                {% else %}
+
+                    <p class="feedback-line">
+
+                        The current detector found
+
+                        <strong>
+                            {{ filler_count }} filler words
+                        </strong>
+
+                        in this response.
+
+                        This is reported as speech evidence
+                        only and is not converted into a
+                        quality penalty.
+
+                    </p>
+
+                {% endif %}
+
+
+                {% if pause_count == 0 %}
+
+                    <p class="feedback-line">
+
+                        No silence interval met the current
+                        pause-detection rule for this response.
+
+                    </p>
+
+
+                {% elif pause_count == 1 %}
+
+                    <p class="feedback-line">
+
+                        The system detected
+                        <strong>1 pause interval</strong>
+                        using the current silence-detection rule.
+
+                    </p>
+
+
+                {% else %}
+
+                    <p class="feedback-line">
+
+                        The system detected
+
+                        <strong>
+                            {{ pause_count }} pause intervals
+                        </strong>
+
+                        using the current silence-detection rule.
+
+                    </p>
+
+                {% endif %}
+
+
+                <div class="feedback-safe">
 
                     No answer-quality grade,
                     pass/fail result,
-                    or 1–5 score is generated because
-                    calibrated evaluation is not yet available.
+                    technical competency judgment,
+                    or 1–5 score is generated from
+                    these measurements.
 
-                </p>
+                </div>
+
 
             </div>
 
@@ -2227,50 +1817,38 @@ h2 {
 </div>
 
 
-<!-- INTERPRETATION -->
-
 <div class="card section">
 
     <h2>
         Prototype Interpretation
     </h2>
 
-
     <p class="research-note">
 
-        AEGIE demonstrates an end-to-end
-        CPU-compatible technical interview
-        analysis pipeline.
-
-        A real voice response is recorded,
-        transcribed using NVIDIA Parakeet,
-        converted into measurable speech features,
-        compared with reference knowledge using MiniLM,
-        processed through the agent architecture,
-        and displayed as transparent evidence.
+        AEGIE records real voice responses,
+        transcribes them with Parakeet,
+        extracts speech measurements,
+        calculates MiniLM semantic evidence,
+        passes the evidence through the agent workflow,
+        and displays the results transparently.
 
     </p>
 
-
     <p class="research-note">
 
-        The current DEVELOPMENT interview uses
+        The current DEVELOPMENT flow uses
         a fixed five-question sequence for
         reproducible software testing.
 
-        Adaptive difficulty and calibrated
-        score-based feedback remain gated until
-        proper human validation is available.
+        Validated scoring and adaptive decisions
+        remain calibration-gated.
 
     </p>
 
 </div>
 
 
-<!-- BUTTONS -->
-
 <div class="footer-actions">
-
 
     <a
         class="btn btn-primary"
@@ -2292,12 +1870,7 @@ h2 {
 
     <button
         class="btn btn-secondary"
-        onclick="
-            window.scrollTo({
-                top:0,
-                behavior:'smooth'
-            })
-        ">
+        onclick="window.scrollTo({top:0,behavior:'smooth'})">
 
         ↑ Back to Top
 
@@ -2311,20 +1884,13 @@ h2 {
 
 <script>
 
-
 function safeNumber(value) {
 
-    const number =
-        Number(value);
+    const number = Number(value);
 
-    if (
-        Number.isNaN(number)
-    ) {
-
-        return 0;
-    }
-
-    return number;
+    return Number.isNaN(number)
+        ? 0
+        : number;
 }
 
 
@@ -2352,119 +1918,103 @@ const semanticMean =
     );
 
 
-/*
-Display scaling only.
-These are not evaluation thresholds.
-*/
-
-const wpmPercent =
+document.getElementById(
+    "wpmBar"
+).style.width =
     Math.min(
         100,
         (avgWpm / 180) * 100
-    );
+    )
+    +
+    "%";
 
 
-const fillerPercent =
+document.getElementById(
+    "fillerBar"
+).style.width =
     Math.min(
         100,
         totalFillers * 10
-    );
+    )
+    +
+    "%";
 
 
-const pausePercent =
+document.getElementById(
+    "pauseBar"
+).style.width =
     Math.min(
         100,
         totalPauses * 8
-    );
+    )
+    +
+    "%";
 
 
-const semanticPercent =
+document.getElementById(
+    "semanticBar"
+).style.width =
     Math.min(
         100,
         Math.max(
             0,
             semanticMean * 100
         )
-    );
-
-
-document.getElementById(
-    "wpmBar"
-).style.width =
-    wpmPercent + "%";
-
-
-document.getElementById(
-    "fillerBar"
-).style.width =
-    fillerPercent + "%";
-
-
-document.getElementById(
-    "pauseBar"
-).style.width =
-    pausePercent + "%";
-
-
-document.getElementById(
-    "semanticBar"
-).style.width =
-    semanticPercent + "%";
+    )
+    +
+    "%";
 
 
 document
-    .querySelectorAll(
-        ".question-whole-bar"
-    )
-    .forEach(
-        function(element) {
+.querySelectorAll(
+    ".question-whole-bar"
+)
+.forEach(
+    function(element) {
 
-            const value =
-                safeNumber(
-                    element.dataset.value
-                );
+        const value =
+            safeNumber(
+                element.dataset.value
+            );
 
-            const width =
-                Math.min(
-                    100,
-                    Math.max(
-                        0,
-                        value * 100
-                    )
-                );
-
-            element.style.width =
-                width + "%";
-        }
-    );
+        element.style.width =
+            Math.min(
+                100,
+                Math.max(
+                    0,
+                    value * 100
+                )
+            )
+            +
+            "%";
+    }
+);
 
 
 document
-    .querySelectorAll(
-        ".question-sentence-bar"
-    )
-    .forEach(
-        function(element) {
+.querySelectorAll(
+    ".question-sentence-bar"
+)
+.forEach(
+    function(element) {
 
-            const value =
-                safeNumber(
-                    element.dataset.value
-                );
+        const value =
+            safeNumber(
+                element.dataset.value
+            );
 
-            const width =
-                Math.min(
-                    100,
-                    Math.max(
-                        0,
-                        value * 100
-                    )
-                );
-
-            element.style.width =
-                width + "%";
-        }
-    );
-
+        element.style.width =
+            Math.min(
+                100,
+                Math.max(
+                    0,
+                    value * 100
+                )
+            )
+            +
+            "%";
+    }
+);
 
 </script>
 
